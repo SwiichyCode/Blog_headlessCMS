@@ -1,7 +1,7 @@
 import getSeasonByMonth from "./getSeasonByMonth";
 
 export default function updateSeasonVideoWithVideos(data: any, videos: any) {
-  const updatedSeasonVideo = { ...data }; // Crée une copie de l'état actuel
+  const updatedSeasonVideo = { ...data };
 
   videos.forEach((video: any) => {
     const videoDate = new Date(video.fields.date);

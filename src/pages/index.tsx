@@ -15,7 +15,6 @@ export default function Home({
   authorPresentation,
   seasonVideo,
 }: Props) {
-  console.log(seasonVideo);
   return (
     <HomeContainer>
       <Header images={images} />
