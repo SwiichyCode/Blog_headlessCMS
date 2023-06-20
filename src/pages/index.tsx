@@ -3,6 +3,7 @@ import HomeContainer from "@/components/Layouts/HomeContainer";
 import Header from "@/components/Header";
 import { ImageCarouselProps } from "@/types/ImageCarousel";
 import { AuthorDescriptionProps } from "@/types/AuthorDescription";
+import Footer from "@/components/Footer";
 
 type Props = {
   images: ImageCarouselProps[];
@@ -18,6 +19,7 @@ export default function Home({
   return (
     <HomeContainer>
       <Header images={images} />
+      <Footer />
     </HomeContainer>
   );
 }
