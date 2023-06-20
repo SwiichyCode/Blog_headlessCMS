@@ -1,23 +1,31 @@
-import getEntries from "@/lib/contentful";
+import getEntries from "@/contentful";
 import HomeContainer from "@/components/Layouts/HomeContainer";
 import Header from "@/components/Header";
-import Carousel_ from "@/components/Carousel";
-import { ContentfulImageProps } from "@/types/contentfulImages";
+import { ImageCarouselProps } from "@/types/ImageCarousel";
+import { AuthorDescriptionProps } from "@/types/AuthorDescription";
 
 type Props = {
-  images: ContentfulImageProps[];
+  images: ImageCarouselProps[];
+  authorPresentation: AuthorDescriptionProps[];
+  seasonVideo: any;
 };
 
-export default function Home({ images }: Props) {
+export default function Home({
+  images,
+  authorPresentation,
+  seasonVideo,
+}: Props) {
+  console.log(seasonVideo);
   return (
     <HomeContainer>
-      <Header />
-      <Carousel_ images={images} />
+      <Header images={images} />
     </HomeContainer>
   );
 }
 
 export async function getStaticProps() {
   const images = await getEntries.getCarouselImages();
-  return { props: { images } };
+  const authorPresentation = await getEntries.getAuthorPresentation();
+  const seasonVideo = await getEntries.getSeasonVideo();
+  return { props: { images, authorPresentation, seasonVideo } };
 }

@@ -1,11 +1,16 @@
-import Logo from "@/components/Logo";
 import Navigation from "@/components/Navigation";
+import Carousel_ from "./Carousel";
+import { ImageCarouselProps } from "@/types/ImageCarousel";
 
-export default function Header() {
+type Props = {
+  images: ImageCarouselProps[];
+};
+
+export default function Header({ images }: Props) {
   return (
-    <header className="flex items-center w-4/6 h-[136px] gap-6 px-8 my-4 border-b-[1px]">
-      <Logo />
+    <header className="flex flex-col items-center justify-center w-full gap-6 py-4 bg-[#1B1B1B]">
       <Navigation />
+      <Carousel_ images={images} />
     </header>
   );
 }

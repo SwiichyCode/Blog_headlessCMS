@@ -1,14 +1,16 @@
 import Link from "next/link";
+import Logo from "./Logo";
 
 const links = [
-  { href: "/", label: "the photographer" },
+  { href: "/", label: "JOURNAL ExTime" },
   { href: "/collection", label: "the collection" },
   { href: "/contact", label: "contact" },
 ];
 
 export default function Navigation() {
   return (
-    <nav className="flex items-center h-full border-l-[1px] px-6">
+    <nav className="flex items-center w-full h-[136px] max-w-[1230px] border-b-[1px]">
+      <Logo />
       <ul className="flex">
         {links.map(({ href, label }, index) => (
           <li key={index} className="py-3 px-4 hover:blur-[1px] ease-in-out">

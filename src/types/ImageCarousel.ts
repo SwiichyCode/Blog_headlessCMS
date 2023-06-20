@@ -1,5 +1,4 @@
-export interface ContentfulImageProps {
-  id: string;
+export interface ImageCarouselProps {
   fields: {
     image: {
       fields: {
@@ -8,5 +7,8 @@ export interface ContentfulImageProps {
         };
       };
     };
+  };
+  sys: {
+    id: string;
   };
 }
