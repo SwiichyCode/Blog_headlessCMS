@@ -1,17 +1,25 @@
-import { DisplayMonth } from "./DisplayMonth";
-
 type Props = {
   season: any;
+  setSelectedMonth: (month: string) => void;
 };
 
-export default function MonthNav({ season }: Props) {
-  const seasonName = season.find(
-    (season: any) => season.isActive === true
-  ).name;
+export default function MonthNav({ season, setSelectedMonth }: Props) {
+  const activeSeason = season.find((season: any) => season.isActive === true);
+  const activeMonths = activeSeason ? activeSeason.month : [];
 
   return (
     <div className="flex w-full max-w-[96px] h-96 bg-white rounded text-black py-6 px-4">
-      {DisplayMonth(seasonName)}
+      <ul className="flex flex-col gap-2">
+        {activeMonths.map((month: any) => (
+          <li
+            key={month.id}
+            onClick={() => setSelectedMonth && setSelectedMonth(month.name)}
+            className={!month.isActive ? "text-red-500" : "text-black"}
+          >
+            {month.name}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

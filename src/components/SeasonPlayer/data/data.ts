@@ -6,85 +6,89 @@ export const seasonItems = [
     id: 1,
     name: "printemps",
     isActive: getCurrentSeason() === "printemps",
+    month: [
+      {
+        id: 1,
+        name: "mars",
+        isActive: getCurrentMonth() === "mars",
+      },
+      {
+        id: 2,
+        name: "avril",
+        isActive: getCurrentMonth() === "avril",
+      },
+      {
+        id: 3,
+        name: "mai",
+        isActive: getCurrentMonth() === "mai",
+      },
+    ],
   },
   {
     id: 2,
     name: "été",
     isActive: getCurrentSeason() === "été",
+    month: [
+      {
+        id: 1,
+        name: "juin",
+        isActive: getCurrentMonth() === "juin",
+      },
+      {
+        id: 2,
+        name: "juillet",
+        isActive: getCurrentMonth() === "juillet",
+      },
+      {
+        id: 3,
+        name: "août",
+        isActive: getCurrentMonth() === "août",
+      },
+    ],
   },
   {
     id: 3,
     name: "automne",
     isActive: getCurrentSeason() === "automne",
+    month: [
+      {
+        id: 1,
+        name: "septembre",
+        isActive: getCurrentMonth() === "septembre",
+      },
+      {
+        id: 2,
+        name: "octobre",
+        isActive: getCurrentMonth() === "octobre",
+      },
+      {
+        id: 3,
+        name: "novembre",
+        isActive: getCurrentMonth() === "novembre",
+      },
+    ],
   },
   {
     id: 4,
     name: "hiver",
     isActive: getCurrentSeason() === "hiver",
-  },
-];
-
-export const monthItems = [
-  {
-    id: 1,
-    name: "janvier",
-    isActive: getCurrentMonth() === "janvier",
-  },
-  {
-    id: 2,
-    name: "février",
-    isActive: getCurrentMonth() === "février",
-  },
-  {
-    id: 3,
-    name: "mars",
-    isActive: getCurrentMonth() === "mars",
-  },
-  {
-    id: 4,
-    name: "avril",
-    isActive: getCurrentMonth() === "avril",
-  },
-  {
-    id: 5,
-    name: "mai",
-    isActive: getCurrentMonth() === "mai",
-  },
-  {
-    id: 6,
-    name: "juin",
-    isActive: getCurrentMonth() === "juin",
-  },
-  {
-    id: 7,
-    name: "juillet",
-    isActive: getCurrentMonth() === "juillet",
-  },
-  {
-    id: 8,
-    name: "août",
-    isActive: getCurrentMonth() === "août",
-  },
-  {
-    id: 9,
-    name: "septembre",
-    isActive: getCurrentMonth() === "septembre",
-  },
-  {
-    id: 10,
-    name: "octobre",
-    isActive: getCurrentMonth() === "octobre",
-  },
-  {
-    id: 11,
-    name: "novembre",
-    isActive: getCurrentMonth() === "novembre",
-  },
-
-  {
-    id: 12,
-    name: "décembre",
-    isActive: getCurrentMonth() === "décembre",
+    month: [
+      {
+        id: 1,
+        name: "décembre",
+        isActive: getCurrentMonth() === "décembre",
+      },
+      {
+        id: 2,
+        name: "janvier",
+        isActive: getCurrentMonth() === "janvier",
+      },
+      {
+        id: 3,
+        name: "février",
+        isActive: getCurrentMonth() === "février",
+      },
+    ],
   },
 ];
 
