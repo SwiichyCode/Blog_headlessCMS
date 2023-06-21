@@ -1,21 +1,29 @@
 import { useState } from "react";
 
-export default function useToggleNav(array: any) {
+export default function useToggleNav(array: any[]) {
   const [items, setItems] = useState(array);
 
-  const toggleNav = (id: number) => {
-    setItems(
-      items.map((item: any) => {
-        if (item.id === id) {
+  const toggleNav = (id: number, parentId?: number) => {
+    setItems((prevItems) =>
+      prevItems.map((item) => {
+        if (parentId) {
+          if (item.id === parentId) {
+            return {
+              ...item,
+              month: item.month.map((m: any) =>
+                m.id === id
+                  ? { ...m, isActive: true }
+                  : { ...m, isActive: false }
+              ),
+            };
+          }
+        } else {
           return {
             ...item,
-            isActive: true,
+            isActive: item.id === id,
           };
         }
-        return {
-          ...item,
-          isActive: false,
-        };
+        return item;
       })
     );
   };

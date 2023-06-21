@@ -1,11 +1,21 @@
 type Props = {
   season: any;
+  toggleNav: any;
   setSelectedMonth: (month: string) => void;
 };
 
-export default function MonthNav({ season, setSelectedMonth }: Props) {
+export default function MonthNav({
+  season,
+  toggleNav,
+  setSelectedMonth,
+}: Props) {
   const activeSeason = season.find((season: any) => season.isActive === true);
   const activeMonths = activeSeason ? activeSeason.month : [];
+
+  const handleMonthClick = (monthId: number, monthName: string) => {
+    toggleNav(monthId, activeSeason?.id);
+    setSelectedMonth(monthName);
+  };
 
   return (
     <div className="flex w-full max-w-[96px] h-96 bg-white rounded text-black py-6 px-4">
@@ -13,10 +23,12 @@ export default function MonthNav({ season, setSelectedMonth }: Props) {
         {activeMonths.map((month: any) => (
           <li
             key={month.id}
-            onClick={() => setSelectedMonth && setSelectedMonth(month.name)}
-            className={!month.isActive ? "text-red-500" : "text-black"}
+            onClick={() => handleMonthClick(month.id, month.name)}
+            className="cursor-pointer"
           >
-            {month.name}
+            <span className={!month.isActive ? "text-red-500" : "text-black"}>
+              {month.name}
+            </span>
           </li>
         ))}
       </ul>

@@ -34,7 +34,7 @@ export default function SeasonPlayer({ seasonVideo }: Props) {
       <div className="flex gap-6">
         <MonthNav
           season={season}
-          selectedMonth={selectedMonth}
+          toggleNav={toggleNav}
           setSelectedMonth={setSelectedMonth}
         />
         <div className="w-full h-96 bg-black rounded">
