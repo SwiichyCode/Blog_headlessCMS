@@ -1,6 +1,22 @@
 import { getCurrentSeason } from "../utils/getCurrentSeason";
 import { getCurrentMonth } from "../utils/getCurrentMonth";
 
+type MonthData = {
+  name: string;
+  video: never[];
+};
+
+type SeasonData = {
+  month: MonthData[];
+};
+
+export type SeasonVideos = {
+  printemps: SeasonData[];
+  ete: SeasonData[];
+  automne: SeasonData[];
+  hiver: SeasonData[];
+};
+
 export const seasonItems = [
   {
     id: 1,
@@ -92,7 +108,7 @@ export const seasonItems = [
   },
 ];
 
-export const initialStateSeason = {
+export const initialStateSeason: SeasonVideos = {
   printemps: [
     {
       month: [
