@@ -22,16 +22,18 @@ export default function SeasonPlayer({ seasonVideo }: Props) {
   useEffect(() => {
     const updatedSeasonVideo = updateSeasonVideoWithVideos(data, seasonVideo);
     setData(updatedSeasonVideo);
-  }, []);
+  }, [seasonVideo]);
 
   useEffect(() => {
     const selectedSeasonData = data[selectedSeason as keyof SeasonVideos];
     const selectedMonthData = selectedSeasonData?.[0]?.month.find(
       (month: any) => month.name === selectedMonth
     );
+
     setSelectedVideos(selectedMonthData?.video || []);
   }, [selectedSeason, selectedMonth, data]);
 
+  console.log(data);
   console.log(selectedVideos);
 
   return (
@@ -47,7 +49,17 @@ export default function SeasonPlayer({ seasonVideo }: Props) {
           toggleNav={toggleNav}
           setSelectedMonth={setSelectedMonth}
         />
-        <div className="w-full h-96 bg-black rounded"></div>
+        <div className="w-full h-96 bg-black rounded">
+          {/* {selectedVideos.map((video: any) => (
+            <video
+              width={150}
+              height={150}
+              className="h-[150px] w-[150px] object-cover"
+            >
+              <source src={video.src} type="video/mp4" />
+            </video>
+          ))} */}
+        </div>
       </div>
     </div>
   );

@@ -6,6 +6,7 @@ type Props = {
   seasonVideo: Props;
 };
 export default function Prototype({ seasonVideo }: Props) {
+  console.log(seasonVideo);
   return (
     <PrototypeContainer>
       <SeasonPlayer seasonVideo={seasonVideo} />

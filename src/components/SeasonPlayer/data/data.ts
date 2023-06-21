@@ -42,7 +42,7 @@ export const seasonItems = [
   },
   {
     id: 2,
-    name: "été",
+    name: "ete",
     isActive: getCurrentSeason() === "été",
     month: [
       {
@@ -139,7 +139,7 @@ export const initialStateSeason: SeasonVideos = {
           video: [],
         },
         {
-          name: "aout",
+          name: "août",
           video: [],
         },
       ],

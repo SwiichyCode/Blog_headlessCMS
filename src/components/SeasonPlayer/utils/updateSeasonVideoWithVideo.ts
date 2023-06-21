@@ -6,8 +6,10 @@ export default function updateSeasonVideoWithVideos(data: any, videos: any) {
   videos.forEach((video: any) => {
     const videoDate = new Date(video.fields.date);
     const month = videoDate
-      .toLocaleString("default", { month: "long" })
+      .toLocaleString("fr-FR", { month: "long" })
       .toLowerCase();
+
+    console.log(month);
     const season = getSeasonByMonth(month);
 
     if (season && updatedSeasonVideo[season]) {
