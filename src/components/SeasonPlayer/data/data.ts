@@ -43,7 +43,7 @@ export const seasonItems = [
   {
     id: 2,
     name: "ete",
-    isActive: getCurrentSeason() === "été",
+    isActive: getCurrentSeason() === "ete",
     month: [
       {
         id: 1,

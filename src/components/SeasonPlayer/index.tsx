@@ -3,10 +3,11 @@ import MonthNav from "./components/MonthNav";
 import SeasonNav from "./components/SeasonNav";
 import useToggleNav from "./hooks/useToggleNav";
 import { seasonItems } from "./data/data";
-import VideoComponent from "./components/VideoPlayer";
 import updateSeasonVideoWithVideos from "./utils/updateSeasonVideoWithVideo";
 import { initialStateSeason } from "./data/data";
 import { SeasonVideos } from "./data/data";
+import { getCurrentSeason } from "./utils/getCurrentSeason";
+import { getCurrentMonth } from "./utils/getCurrentMonth";
 
 type Props = {
   seasonVideo: any;
@@ -15,8 +16,8 @@ type Props = {
 export default function SeasonPlayer({ seasonVideo }: Props) {
   const { items: season, toggleNav } = useToggleNav(seasonItems);
   const [data, setData] = useState(initialStateSeason);
-  const [selectedSeason, setSelectedSeason] = useState("");
-  const [selectedMonth, setSelectedMonth] = useState("");
+  const [selectedSeason, setSelectedSeason] = useState(getCurrentSeason());
+  const [selectedMonth, setSelectedMonth] = useState(getCurrentMonth());
   const [selectedVideos, setSelectedVideos] = useState([]);
 
   useEffect(() => {
@@ -33,8 +34,7 @@ export default function SeasonPlayer({ seasonVideo }: Props) {
     setSelectedVideos(selectedMonthData?.video || []);
   }, [selectedSeason, selectedMonth, data]);
 
-  console.log(data);
-  console.log(selectedVideos);
+  console.log("selectedVideos", selectedVideos);
 
   return (
     <div className="flex flex-col w-full max-w-[600px] gap-6">

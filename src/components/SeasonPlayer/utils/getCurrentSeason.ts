@@ -18,7 +18,7 @@ export const getCurrentSeason = () => {
     case 6:
     case 7:
     case 8:
-      season = "été";
+      season = "ete";
       break;
     case 9:
     case 10:

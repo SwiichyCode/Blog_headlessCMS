@@ -12,6 +12,8 @@ export default function MonthNav({
   const activeSeason = season.find((season: any) => season.isActive === true);
   const activeMonths = activeSeason ? activeSeason.month : [];
 
+  console.log("activeSeason", activeMonths);
+
   const handleMonthClick = (monthId: number, monthName: string) => {
     toggleNav(monthId, activeSeason?.id);
     setSelectedMonth(monthName);
