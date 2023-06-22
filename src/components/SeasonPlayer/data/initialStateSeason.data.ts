@@ -1,20 +1,71 @@
-import { InitialStateSeasonType } from "../types/initialStateSeason.type";
+import { initialStateSeasonType } from "../types/initialStateSeason.type";
 
-export const initialStateSeason: InitialStateSeasonType = {
+export const initialStateSeason: initialStateSeasonType = {
   printemps: [
     {
       month: [
         {
           name: "mars",
-          video: [],
+          week: [
+            {
+              name: "week1",
+              video: [],
+            },
+            {
+              name: "week2",
+              video: [],
+            },
+            {
+              name: "week3",
+              video: [],
+            },
+            {
+              name: "week4",
+              video: [],
+            },
+          ],
         },
         {
           name: "avril",
-          video: [],
+          week: [
+            {
+              name: "week1",
+              video: [],
+            },
+            {
+              name: "week2",
+              video: [],
+            },
+            {
+              name: "week3",
+              video: [],
+            },
+            {
+              name: "week4",
+              video: [],
+            },
+          ],
         },
         {
           name: "mai",
-          video: [],
+          week: [
+            {
+              name: "week1",
+              video: [],
+            },
+            {
+              name: "week2",
+              video: [],
+            },
+            {
+              name: "week3",
+              video: [],
+            },
+            {
+              name: "week4",
+              video: [],
+            },
+          ],
         },
       ],
     },
@@ -24,15 +75,66 @@ export const initialStateSeason: InitialStateSeasonType = {
       month: [
         {
           name: "juin",
-          video: [],
+          week: [
+            {
+              name: "week1",
+              video: [],
+            },
+            {
+              name: "week2",
+              video: [],
+            },
+            {
+              name: "week3",
+              video: [],
+            },
+            {
+              name: "week4",
+              video: [],
+            },
+          ],
         },
         {
           name: "juillet",
-          video: [],
+          week: [
+            {
+              name: "week1",
+              video: [],
+            },
+            {
+              name: "week2",
+              video: [],
+            },
+            {
+              name: "week3",
+              video: [],
+            },
+            {
+              name: "week4",
+              video: [],
+            },
+          ],
         },
         {
           name: "août",
-          video: [],
+          week: [
+            {
+              name: "week1",
+              video: [],
+            },
+            {
+              name: "week2",
+              video: [],
+            },
+            {
+              name: "week3",
+              video: [],
+            },
+            {
+              name: "week4",
+              video: [],
+            },
+          ],
         },
       ],
     },
@@ -42,15 +144,66 @@ export const initialStateSeason: InitialStateSeasonType = {
       month: [
         {
           name: "septembre",
-          video: [],
+          week: [
+            {
+              name: "week1",
+              video: [],
+            },
+            {
+              name: "week2",
+              video: [],
+            },
+            {
+              name: "week3",
+              video: [],
+            },
+            {
+              name: "week4",
+              video: [],
+            },
+          ],
         },
         {
           name: "octobre",
-          video: [],
+          week: [
+            {
+              name: "week1",
+              video: [],
+            },
+            {
+              name: "week2",
+              video: [],
+            },
+            {
+              name: "week3",
+              video: [],
+            },
+            {
+              name: "week4",
+              video: [],
+            },
+          ],
         },
         {
           name: "novembre",
-          video: [],
+          week: [
+            {
+              name: "week1",
+              video: [],
+            },
+            {
+              name: "week2",
+              video: [],
+            },
+            {
+              name: "week3",
+              video: [],
+            },
+            {
+              name: "week4",
+              video: [],
+            },
+          ],
         },
       ],
     },
@@ -60,15 +213,66 @@ export const initialStateSeason: InitialStateSeasonType = {
       month: [
         {
           name: "decembre",
-          video: [],
+          week: [
+            {
+              name: "week1",
+              video: [],
+            },
+            {
+              name: "week2",
+              video: [],
+            },
+            {
+              name: "week3",
+              video: [],
+            },
+            {
+              name: "week4",
+              video: [],
+            },
+          ],
         },
         {
           name: "janvier",
-          video: [],
+          week: [
+            {
+              name: "week1",
+              video: [],
+            },
+            {
+              name: "week2",
+              video: [],
+            },
+            {
+              name: "week3",
+              video: [],
+            },
+            {
+              name: "week4",
+              video: [],
+            },
+          ],
         },
         {
           name: "fevrier",
-          video: [],
+          week: [
+            {
+              name: "week1",
+              video: [],
+            },
+            {
+              name: "week2",
+              video: [],
+            },
+            {
+              name: "week3",
+              video: [],
+            },
+            {
+              name: "week4",
+              video: [],
+            },
+          ],
         },
       ],
     },

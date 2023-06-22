@@ -8,21 +8,24 @@ export const updateSeasonVideoWithVideos = (data: any, videos: any) => {
     const month = videoDate
       .toLocaleString("fr-FR", { month: "long" })
       .toLowerCase();
-
     const season = getSeasonByMonth(month);
 
     if (season && updatedSeasonVideo[season]) {
-      const monthObj = updatedSeasonVideo[season][0].month.find(
-        (m: any) => m.name === month
-      );
+      const seasonData = updatedSeasonVideo[season][0];
+      const monthObj = seasonData.month.find((m: any) => m.name === month);
 
       if (monthObj) {
-        const isDuplicate = monthObj.video.some(
-          (v: any) => v.sys.id === video.sys.id
-        );
+        const weekIndex = Math.ceil(videoDate.getDate() / 7) - 1;
+        const weekObj = monthObj.week[weekIndex];
 
-        if (!isDuplicate) {
-          monthObj.video.push(video);
+        if (weekObj) {
+          const isDuplicate = weekObj.video.some(
+            (v: any) => v.sys.id === video.sys.id
+          );
+
+          if (!isDuplicate) {
+            weekObj.video.push(video);
+          }
         }
       }
     }

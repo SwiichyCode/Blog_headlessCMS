@@ -19,6 +19,7 @@ export default function SeasonPlayer({ seasonVideo }: Props) {
   const [selectedSeason, setSelectedSeason] = useState(getCurrentSeason());
   const [selectedMonth, setSelectedMonth] = useState(getCurrentMonth());
   const [selectedVideos, setSelectedVideos] = useState<any>([]);
+  console.log("seasonVideo", data);
 
   useEffect(() => {
     const updatedSeasonVideo = updateSeasonVideoWithVideos(data, seasonVideo);
@@ -32,8 +33,10 @@ export default function SeasonPlayer({ seasonVideo }: Props) {
       (month: any) => month.name === selectedMonth
     );
 
-    setSelectedVideos(selectedMonthData?.video || []);
+    setSelectedVideos(selectedMonthData?.week || []);
   }, [selectedSeason, selectedMonth, data]);
+
+  console.log("selectedVideos", selectedVideos);
 
   return (
     <div className="flex flex-col w-full max-w-[600px] gap-6">
