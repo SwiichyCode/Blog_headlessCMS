@@ -1,4 +1,4 @@
-export default function getSeasonByMonth(month: any) {
+export const getSeasonByMonth = (month: any) => {
   switch (month) {
     case "decembre":
     case "janvier":
@@ -19,4 +19,4 @@ export default function getSeasonByMonth(month: any) {
     default:
       return null;
   }
-}
+};

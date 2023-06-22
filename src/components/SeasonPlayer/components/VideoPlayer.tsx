@@ -11,7 +11,7 @@ const videos = [
   "/video/test.MOV",
 ];
 
-const VideoComponent = () => {
+export default function VideoComponent() {
   const videoRefs = useRef<Array<HTMLVideoElement | null>>([]);
 
   useEffect(() => {
@@ -40,6 +40,4 @@ const VideoComponent = () => {
       ))}
     </div>
   );
-};
-
-export default VideoComponent;
+}

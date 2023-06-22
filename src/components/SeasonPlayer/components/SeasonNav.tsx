@@ -1,6 +1,8 @@
+import { initialStateSeasonNavType } from "../types/initialStateSeasonNav.type";
+
 type Props = {
-  season: any;
-  toggleNav: any;
+  season: initialStateSeasonNavType[];
+  toggleNav: (seasonId: number) => void;
   setSelectedSeason: (season: string) => void;
 };
 

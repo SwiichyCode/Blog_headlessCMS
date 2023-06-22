@@ -1,24 +1,24 @@
 import { useState, useEffect } from "react";
+import { initialStateSeasonNav } from "./data/initialStateSeasonNav.data";
+import { initialStateSeasonType } from "./types/initialStateSeason.type";
+import { initialStateSeason } from "./data/initialStateSeason.data";
+import { getCurrentSeason } from "./utils/getCurrentSeason";
+import { getCurrentMonth } from "./utils/getCurrentMonth";
+import { updateSeasonVideoWithVideos } from "./utils/updateSeasonVideoWithVideo";
 import MonthNav from "./components/MonthNav";
 import SeasonNav from "./components/SeasonNav";
 import useToggleNav from "./hooks/useToggleNav";
-import { seasonItems } from "./data/data";
-import updateSeasonVideoWithVideos from "./utils/updateSeasonVideoWithVideo";
-import { initialStateSeason } from "./data/data";
-import { SeasonVideos } from "./data/data";
-import { getCurrentSeason } from "./utils/getCurrentSeason";
-import { getCurrentMonth } from "./utils/getCurrentMonth";
 
 type Props = {
   seasonVideo: any;
 };
 
 export default function SeasonPlayer({ seasonVideo }: Props) {
-  const { items: season, toggleNav } = useToggleNav(seasonItems);
+  const { items: season, toggleNav } = useToggleNav(initialStateSeasonNav);
   const [data, setData] = useState(initialStateSeason);
   const [selectedSeason, setSelectedSeason] = useState(getCurrentSeason());
   const [selectedMonth, setSelectedMonth] = useState(getCurrentMonth());
-  const [selectedVideos, setSelectedVideos] = useState([]);
+  const [selectedVideos, setSelectedVideos] = useState<any>([]);
 
   useEffect(() => {
     const updatedSeasonVideo = updateSeasonVideoWithVideos(data, seasonVideo);
@@ -26,15 +26,14 @@ export default function SeasonPlayer({ seasonVideo }: Props) {
   }, [seasonVideo]);
 
   useEffect(() => {
-    const selectedSeasonData = data[selectedSeason as keyof SeasonVideos];
+    const selectedSeasonData =
+      data[selectedSeason as keyof initialStateSeasonType];
     const selectedMonthData = selectedSeasonData?.[0]?.month.find(
       (month: any) => month.name === selectedMonth
     );
 
     setSelectedVideos(selectedMonthData?.video || []);
   }, [selectedSeason, selectedMonth, data]);
-
-  console.log("selectedVideos", selectedVideos);
 
   return (
     <div className="flex flex-col w-full max-w-[600px] gap-6">

@@ -1,6 +1,6 @@
-import getSeasonByMonth from "./getSeasonByMonth";
+import { getSeasonByMonth } from "./getSeasonByMonth";
 
-export default function updateSeasonVideoWithVideos(data: any, videos: any) {
+export const updateSeasonVideoWithVideos = (data: any, videos: any) => {
   const updatedSeasonVideo = { ...data };
 
   videos.forEach((video: any) => {
@@ -29,4 +29,4 @@ export default function updateSeasonVideoWithVideos(data: any, videos: any) {
   });
 
   return updatedSeasonVideo;
-}
+};

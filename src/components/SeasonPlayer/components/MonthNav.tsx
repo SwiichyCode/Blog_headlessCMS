@@ -1,6 +1,8 @@
+import { initialStateSeasonNavType } from "../types/initialStateSeasonNav.type";
+
 type Props = {
-  season: any;
-  toggleNav: any;
+  season: initialStateSeasonNavType[];
+  toggleNav: (monthId: number, seasonId: number) => void;
   setSelectedMonth: (month: string) => void;
 };
 
@@ -12,10 +14,8 @@ export default function MonthNav({
   const activeSeason = season.find((season: any) => season.isActive === true);
   const activeMonths = activeSeason ? activeSeason.month : [];
 
-  console.log("activeSeason", activeMonths);
-
   const handleMonthClick = (monthId: number, monthName: string) => {
-    toggleNav(monthId, activeSeason?.id);
+    toggleNav(monthId, activeSeason?.id || 0);
     setSelectedMonth(monthName);
   };
 

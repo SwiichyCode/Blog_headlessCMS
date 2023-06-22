@@ -1,23 +1,8 @@
 import { getCurrentSeason } from "../utils/getCurrentSeason";
 import { getCurrentMonth } from "../utils/getCurrentMonth";
+import { initialStateSeasonNavType } from "../types/initialStateSeasonNav.type";
 
-type MonthData = {
-  name: string;
-  video: never[];
-};
-
-type SeasonData = {
-  month: MonthData[];
-};
-
-export type SeasonVideos = {
-  printemps: SeasonData[];
-  ete: SeasonData[];
-  automne: SeasonData[];
-  hiver: SeasonData[];
-};
-
-export const seasonItems = [
+export const initialStateSeasonNav: initialStateSeasonNavType[] = [
   {
     id: 1,
     name: "printemps",
@@ -107,78 +92,3 @@ export const seasonItems = [
     ],
   },
 ];
-
-export const initialStateSeason: SeasonVideos = {
-  printemps: [
-    {
-      month: [
-        {
-          name: "mars",
-          video: [],
-        },
-        {
-          name: "avril",
-          video: [],
-        },
-        {
-          name: "mai",
-          video: [],
-        },
-      ],
-    },
-  ],
-  ete: [
-    {
-      month: [
-        {
-          name: "juin",
-          video: [],
-        },
-        {
-          name: "juillet",
-          video: [],
-        },
-        {
-          name: "août",
-          video: [],
-        },
-      ],
-    },
-  ],
-  automne: [
-    {
-      month: [
-        {
-          name: "septembre",
-          video: [],
-        },
-        {
-          name: "octobre",
-          video: [],
-        },
-        {
-          name: "novembre",
-          video: [],
-        },
-      ],
-    },
-  ],
-  hiver: [
-    {
-      month: [
-        {
-          name: "decembre",
-          video: [],
-        },
-        {
-          name: "janvier",
-          video: [],
-        },
-        {
-          name: "fevrier",
-          video: [],
-        },
-      ],
-    },
-  ],
-};

@@ -4,11 +4,10 @@ import getEntries from "@/contentful";
 import { SeasonVideoProps } from "@/types/SeasonVideo";
 
 type Props = {
-  seasonVideo: SeasonVideoProps[];
+  seasonVideo: any;
 };
 
 export default function Prototype({ seasonVideo }: Props) {
-  console.log(seasonVideo);
   return (
     <PrototypeContainer>
       <SeasonPlayer seasonVideo={seasonVideo} />
