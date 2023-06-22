@@ -4,11 +4,12 @@ import Header from "@/components/Header";
 import { ImageCarouselProps } from "@/types/ImageCarousel";
 import { AuthorDescriptionProps } from "@/types/AuthorDescription";
 import Footer from "@/components/Footer";
+import { SeasonVideoProps } from "@/types/SeasonVideo";
 
 type Props = {
   images: ImageCarouselProps[];
   authorPresentation: AuthorDescriptionProps[];
-  seasonVideo: any;
+  seasonVideo: SeasonVideoProps[];
 };
 
 export default function Home({
