@@ -9,9 +9,9 @@ const links = [
 
 export default function Navigation() {
   return (
-    <nav className="flex items-center w-full h-[136px] max-w-[1230px] border-b-[1px]">
+    <nav className="flex items-center w-full h-[136px] max-w-[1230px] border-b-[1px] border-[#B5B3B3]">
       <Logo />
-      <ul className="flex">
+      <ul className="flex px-4">
         {links.map(({ href, label }, index) => (
           <li key={index} className="py-3 px-4 hover:blur-[1px] ease-in-out">
             <Link

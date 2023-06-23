@@ -9,9 +9,17 @@ import CarouselImage from "./CarouselImage";
 
 type Props = {
   images: ImageCarouselProps[];
+  width: number;
+  children?: React.ReactNode;
+  renderArrow?: boolean;
 };
 
-export default function Carousel_({ images }: Props) {
+export default function Carousel_({
+  images,
+  width,
+  renderArrow = true,
+  children,
+}: Props) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
@@ -24,23 +32,32 @@ export default function Carousel_({ images }: Props) {
         infiniteLoop={true}
         autoPlay={true}
         interval={10000}
-        width={980}
+        width={width || 980}
         onChange={(index) => setCurrentIndex(index)}
-        renderArrowPrev={(onClickHandler, hasPrev, labelPrev) => (
-          <ArrowSlide
-            onClick={onClickHandler}
-            labelPrev={labelPrev}
-            position="left"
-          />
-        )}
-        renderArrowNext={(onClickHandler, hasNext, labelNext) => (
-          <ArrowSlide
-            onClick={onClickHandler}
-            labelNext={labelNext}
-            position="right"
-          />
-        )}
+        renderArrowPrev={(onClickHandler, hasPrev, labelPrev) => {
+          return (
+            renderArrow && (
+              <ArrowSlide
+                onClick={onClickHandler}
+                labelPrev={labelPrev}
+                position="left"
+              />
+            )
+          );
+        }}
+        renderArrowNext={(onClickHandler, hasNext, labelNext) => {
+          return (
+            renderArrow && (
+              <ArrowSlide
+                onClick={onClickHandler}
+                labelNext={labelNext}
+                position="right"
+              />
+            )
+          );
+        }}
       >
+        {/* Refact this part to be more dynamic */}
         {images.map((image) => (
           <CarouselImage image={image} key={image.sys.id} />
         ))}

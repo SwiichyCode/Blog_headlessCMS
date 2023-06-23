@@ -8,9 +8,9 @@ type Props = {
 
 export default function Header({ images }: Props) {
   return (
-    <header className="flex flex-col items-center justify-center w-full gap-6 py-4 bg-[#1B1B1B]">
+    <header className="flex flex-col items-center justify-center w-full bg-[#1B1B1B]">
       <Navigation />
-      <Carousel_ images={images} />
+      {/* <Carousel_ images={images} /> */}
     </header>
   );
 }

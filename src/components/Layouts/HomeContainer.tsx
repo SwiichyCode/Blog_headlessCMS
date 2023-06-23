@@ -6,7 +6,7 @@ interface Props {
 
 export default function HomeContainer({ children }: Props) {
   return (
-    <div className="flex flex-col items-center h-screen font-inter">
+    <div className="flex flex-col justify-between items-center h-screen font-inter bg-[#1B1B1B]">
       {children}
     </div>
   );
