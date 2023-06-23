@@ -1,38 +1,22 @@
+export type Month = {
+  name: string;
+  week: {
+    name: string;
+    video: any[]; // Update this type accordingly
+  }[];
+};
+
 export type initialStateSeasonType = {
   printemps: {
-    month: {
-      name: string;
-      week: {
-        name: string;
-        video: string[];
-      }[];
-    }[];
+    month: Month[];
   }[];
   ete: {
-    month: {
-      name: string;
-      week: {
-        name: string;
-        video: string[];
-      }[];
-    }[];
+    month: Month[];
   }[];
   automne: {
-    month: {
-      name: string;
-      week: {
-        name: string;
-        video: string[];
-      }[];
-    }[];
+    month: Month[];
   }[];
   hiver: {
-    month: {
-      name: string;
-      week: {
-        name: string;
-        video: string[];
-      }[];
-    }[];
+    month: Month[];
   }[];
 };

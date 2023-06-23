@@ -19,7 +19,6 @@ export default function SeasonPlayer({ seasonVideo }: Props) {
   const [selectedSeason, setSelectedSeason] = useState(getCurrentSeason());
   const [selectedMonth, setSelectedMonth] = useState(getCurrentMonth());
   const [selectedVideos, setSelectedVideos] = useState<any>([]);
-  console.log("seasonVideo", data);
 
   useEffect(() => {
     const updatedSeasonVideo = updateSeasonVideoWithVideos(data, seasonVideo);
@@ -28,9 +27,9 @@ export default function SeasonPlayer({ seasonVideo }: Props) {
 
   useEffect(() => {
     const selectedSeasonData =
-      data[selectedSeason as keyof initialStateSeasonType];
-    const selectedMonthData = selectedSeasonData?.[0]?.month.find(
-      (month: any) => month.name === selectedMonth
+      data[selectedSeason as keyof initialStateSeasonType][0];
+    const selectedMonthData = selectedSeasonData?.month.find(
+      (month) => month.name === selectedMonth
     );
 
     setSelectedVideos(selectedMonthData?.week || []);
