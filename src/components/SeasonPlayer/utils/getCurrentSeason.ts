@@ -1,33 +1,23 @@
 export const getCurrentSeason = () => {
   const currentDate = new Date();
-  const currentMonth = currentDate.getMonth() + 1; // Les mois commencent à 0, donc on ajoute 1
+  const currentMonth = currentDate.getMonth() + 1;
 
-  let season = "";
+  const seasons: Record<number, string> = {
+    1: "hiver",
+    2: "hiver",
+    3: "printemps",
+    4: "printemps",
+    5: "printemps",
+    6: "ete",
+    7: "ete",
+    8: "ete",
+    9: "automne",
+    10: "automne",
+    11: "automne",
+    12: "hiver",
+  };
 
-  switch (currentMonth) {
-    case 1:
-    case 2:
-    case 12:
-      season = "hiver";
-      break;
-    case 3:
-    case 4:
-    case 5:
-      season = "printemps";
-      break;
-    case 6:
-    case 7:
-    case 8:
-      season = "ete";
-      break;
-    case 9:
-    case 10:
-    case 11:
-      season = "automne";
-      break;
-    default:
-      season = "inconnue";
-  }
+  const season = seasons[currentMonth] || "inconnue";
 
   return season;
 };

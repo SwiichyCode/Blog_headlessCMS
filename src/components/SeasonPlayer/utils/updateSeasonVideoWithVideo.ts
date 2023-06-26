@@ -1,9 +1,54 @@
 import { getSeasonByMonth } from "./getSeasonByMonth";
 
-export const updateSeasonVideoWithVideos = (data: any, videos: any) => {
-  const updatedSeasonVideo = { ...data };
+interface Video {
+  fields: {
+    date: string;
+  };
+  sys: {
+    id: string;
+  };
+}
 
-  videos.forEach((video: any) => {
+interface Week {
+  video: Video[];
+}
+
+interface Month {
+  name: string;
+  week: Week[];
+}
+
+interface SeasonData {
+  month: Month[];
+}
+
+interface UpdatedSeasonVideo {
+  [season: string]: SeasonData[];
+}
+
+const updateWeekVideo = (weekObj: Week, video: Video): void => {
+  const isDuplicate = weekObj.video.some((v) => v.sys.id === video.sys.id);
+  if (!isDuplicate) {
+    weekObj.video.push(video);
+  }
+};
+
+const updateMonthVideo = (monthObj: Month, video: Video): void => {
+  const videoDate = new Date(video.fields.date);
+  const weekIndex = Math.ceil(videoDate.getDate() / 7) - 1;
+  const weekObj = monthObj.week[weekIndex];
+  if (weekObj) {
+    updateWeekVideo(weekObj, video);
+  }
+};
+
+export const updateSeasonVideoWithVideos = (
+  data: UpdatedSeasonVideo,
+  videos: Video[]
+): UpdatedSeasonVideo => {
+  const updatedSeasonVideo: UpdatedSeasonVideo = { ...data };
+
+  videos.forEach((video) => {
     const videoDate = new Date(video.fields.date);
     const month = videoDate
       .toLocaleString("fr-FR", { month: "long" })
@@ -12,21 +57,10 @@ export const updateSeasonVideoWithVideos = (data: any, videos: any) => {
 
     if (season && updatedSeasonVideo[season]) {
       const seasonData = updatedSeasonVideo[season][0];
-      const monthObj = seasonData.month.find((m: any) => m.name === month);
+      const monthObj = seasonData.month.find((m) => m.name === month);
 
       if (monthObj) {
-        const weekIndex = Math.ceil(videoDate.getDate() / 7) - 1;
-        const weekObj = monthObj.week[weekIndex];
-
-        if (weekObj) {
-          const isDuplicate = weekObj.video.some(
-            (v: any) => v.sys.id === video.sys.id
-          );
-
-          if (!isDuplicate) {
-            weekObj.video.push(video);
-          }
-        }
+        updateMonthVideo(monthObj, video);
       }
     }
   });

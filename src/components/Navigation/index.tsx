@@ -2,6 +2,13 @@ import Link from "next/link";
 import Logo from "@/components/Logo";
 import Dropdown from "@/components/Navigation/Dropdown";
 
+const dropdownLinks = [
+  { href: "/", label: "all" },
+  { href: "/", label: "landscapes" },
+  { href: "/", label: "portraits" },
+  { href: "/", label: "street" },
+];
+
 export default function Navigation() {
   return (
     <nav className="flex items-center w-full h-[156px] max-w-[1230px] border-b-[1px] border-[#B5B3B3] px-4">
@@ -15,7 +22,7 @@ export default function Navigation() {
             JOURNAL ExTime
           </Link>
         </li>
-        <Dropdown />
+        <Dropdown dropdownLinks={dropdownLinks} />
         <li className="px-4 hover:blur-[1px] ease-in-out">
           <Link
             className="text-[#B5B3B3] text-sm tracking-[1.6px] uppercase"

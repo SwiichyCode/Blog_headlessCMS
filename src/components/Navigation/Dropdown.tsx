@@ -3,14 +3,11 @@ import { BiChevronDown } from "react-icons/bi";
 import { useClickOutside } from "@/hooks/useClickOutside";
 import Link from "next/link";
 
-const dropdownLinks = [
-  { href: "/", label: "all" },
-  { href: "/", label: "landscapes" },
-  { href: "/", label: "portraits" },
-  { href: "/", label: "street" },
-];
+type DropdownProps = {
+  dropdownLinks: { href: string; label: string }[];
+};
 
-export default function Dropdown() {
+export default function Dropdown({ dropdownLinks }: DropdownProps) {
   const [openCollection, setOpenCollection] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const buttonDropdownRef = useRef<HTMLDivElement>(null);
