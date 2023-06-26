@@ -45,6 +45,8 @@ export default function SeasonPlayer({ seasonVideo }: Props) {
     setSelectedVideos(selectedMonthData?.week as Week[]);
   }, [selectedSeason, selectedMonth, data]);
 
+  console.log(selectedVideos);
+
   return (
     <div className="flex flex-col w-full max-w-[600px] gap-6">
       <SeasonNav

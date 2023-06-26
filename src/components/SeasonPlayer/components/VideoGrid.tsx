@@ -1,24 +1,17 @@
 import React, { useEffect, useRef } from "react";
 import Video from "./Video";
 
-const videos = [
-  "/video/test.MOV",
-  "/video/test.MOV",
-  "/video/test.MOV",
-  "/video/test.MOV",
-  "/video/test.MOV",
-  "/video/test.MOV",
-  "/video/test.MOV",
-];
+export type Props = {
+  videos: string[];
+};
 
-export default function VideoComponent() {
+export default function VideoComponent({ videos }: Props) {
   const videoRefs = useRef<Array<HTMLVideoElement | null>>([]);
 
   useEffect(() => {
     const playVideoWithDelay = (video: HTMLVideoElement, delay: number) => {
       setTimeout(() => {
         video.play().catch((error) => {
-          // Gérer les erreurs de lecture ici (par exemple, si le navigateur bloque la lecture automatique)
           console.error("Erreur de lecture de la vidéo:", error);
         });
       }, delay);
@@ -27,14 +20,14 @@ export default function VideoComponent() {
     document.addEventListener("click", () => {
       videoRefs.current.forEach((videoRef, index) => {
         if (videoRef) {
-          playVideoWithDelay(videoRef, index * 1500); // Décalage de lecture de chaque vidéo en millisecondes
+          playVideoWithDelay(videoRef, index * 1500);
         }
       });
     });
   }, []);
 
   return (
-    <div className="flex flex-wrap justify-between gap-2">
+    <div className="flex flex-wrap gap-2">
       {videos.map((src, index) => (
         <Video key={index} videoRefs={videoRefs} index={index} src={src} />
       ))}

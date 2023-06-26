@@ -1,22 +1,18 @@
-export const getSeasonByMonth = (month: any) => {
-  switch (month) {
-    case "decembre":
-    case "janvier":
-    case "fevrier":
-      return "hiver";
-    case "mars":
-    case "avril":
-    case "mai":
-      return "printemps";
-    case "juin":
-    case "juillet":
-    case "aout":
-      return "ete";
-    case "septembre":
-    case "octobre":
-    case "novembre":
-      return "automne";
-    default:
-      return null;
-  }
+const monthToSeasonMap: { [month: string]: string } = {
+  decembre: "hiver",
+  janvier: "hiver",
+  fevrier: "hiver",
+  mars: "printemps",
+  avril: "printemps",
+  mai: "printemps",
+  juin: "ete",
+  juillet: "ete",
+  aout: "ete",
+  septembre: "automne",
+  octobre: "automne",
+  novembre: "automne",
+};
+
+export const getSeasonByMonth = (month: string) => {
+  return monthToSeasonMap[month] || null;
 };

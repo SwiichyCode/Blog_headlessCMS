@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 import ArrowSlide from "@/components/Carousel/ArrowSlide";
-import { SeasonVideoProps } from "@/types/SeasonVideo";
+import VideoGrid from "./VideoGrid";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 type Props = {
   week: any;
@@ -11,11 +11,13 @@ type Props = {
 export default function WeekCarousel({ week }: Props) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const videos =
-    week && week[currentIndex]?.map((video: any) => video.fields.date);
+    week &&
+    week[currentIndex]?.map(
+      (video: any) => video.fields?.image?.fields?.file?.url
+    );
 
   return (
     <Carousel
-      width={600}
       onChange={(index) => setCurrentIndex(index)}
       renderArrowPrev={(onClickHandler, hasPrev, labelPrev) => {
         return (
@@ -38,10 +40,8 @@ export default function WeekCarousel({ week }: Props) {
     >
       {week &&
         week.map((week: any) => (
-          <div className="flex flex-col">
-            {videos.map((video: any) => (
-              <span>{video}</span>
-            ))}
+          <div className="h-[384px]">
+            <VideoGrid videos={videos} />
           </div>
         ))}
     </Carousel>
