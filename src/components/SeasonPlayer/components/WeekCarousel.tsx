@@ -3,13 +3,14 @@ import { Carousel } from "react-responsive-carousel";
 import ArrowSlide from "@/components/Carousel/ArrowSlide";
 import VideoGrid from "./VideoGrid";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { getCurrentWeek } from "../utils/getCurrentWeek";
 
 type Props = {
   week: any;
 };
 
 export default function WeekCarousel({ week }: Props) {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(getCurrentWeek());
   const videos =
     week &&
     week[currentIndex]?.map(
@@ -19,6 +20,7 @@ export default function WeekCarousel({ week }: Props) {
   return (
     <Carousel
       onChange={(index) => setCurrentIndex(index)}
+      selectedItem={currentIndex}
       renderArrowPrev={(onClickHandler, hasPrev, labelPrev) => {
         return (
           <ArrowSlide
