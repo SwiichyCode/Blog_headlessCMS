@@ -10,7 +10,7 @@ type Props = {
 
 export default function Header({ logo, carouselImages }: Props) {
   return (
-    <header className="flex flex-col items-center justify-center w-full bg-[#1B1B1B]">
+    <header className="flex flex-col items-center justify-center w-full bg-[#1B1B1B] mb-14">
       <Navigation logo={logo} />
       <Carousel_ carouselImages={carouselImages} />
     </header>

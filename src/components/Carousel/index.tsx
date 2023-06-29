@@ -18,16 +18,15 @@ export default function Carousel_({ carouselImages }: Props) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
-    <div className="flex flex-col items-center mb-8">
+    <div className="flex flex-col items-center mb-8 px-4">
       <Carousel
-        className="flex h-auto mt-8 mb-4"
+        className="flex w-full max-w-[900px] h-auto mt-8 mb-4"
         showThumbs={false}
         showIndicators={false}
         showStatus={false}
         infiniteLoop={true}
         autoPlay={true}
         interval={10000}
-        width={980}
         onChange={(index) => setCurrentIndex(index)}
         renderArrowPrev={(onClickHandler, hasPrev, labelPrev) => {
           return (
@@ -52,7 +51,7 @@ export default function Carousel_({ carouselImages }: Props) {
           <CarouselImage image={image} key={image.sys.id} />
         ))}
       </Carousel>
-      <div className="flex items-center w-[817px]">
+      <div className="flex items-center w-full max-w-[817px]">
         <CarouselIndex
           currentIndex={currentIndex}
           maxIndex={carouselImages.length}

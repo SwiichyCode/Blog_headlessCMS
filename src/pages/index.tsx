@@ -6,6 +6,7 @@ import { AuthorDescriptionProps } from "@/types/AuthorDescription";
 import Footer from "@/components/Footer";
 import { SeasonVideoProps } from "@/types/SeasonVideo";
 import { LogoProps } from "@/types/Logo";
+import Main from "@/components/Main";
 
 type Props = {
   carouselImages: ImageCarouselProps[];
@@ -15,11 +16,10 @@ type Props = {
 };
 
 export default function Home({ logo, carouselImages }: Props) {
-  console.log(carouselImages);
   return (
     <HomeContainer>
       <Header logo={logo} carouselImages={carouselImages} />
-
+      <Main />
       <Footer />
     </HomeContainer>
   );

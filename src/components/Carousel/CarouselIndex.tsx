@@ -8,7 +8,7 @@ export default function CarouselIndex(props: CarouselIndexProps) {
 
   function indexContainer(index: number) {
     return (
-      <span className=" border-[1px] border-[#B5B3B3] text-[#B5B3B3] px-3 py-1">
+      <span className="border-[1px] border-[#B5B3B3] text-[#B5B3B3] px-3 py-1">
         {index}
       </span>
     );
