@@ -23,15 +23,15 @@ const getLogo = async () => {
 //   return entries.items;
 // };
 
-// const getCarouselImages = async () => {
-//   const entries = await currentClient
-//     .getEntries({ content_type: "imageCarousel" })
-//     .then((asset) => {
-//       return asset.items;
-//     });
+const getCarouselImages = async () => {
+  const entries = await developpement
+    .getEntries({ content_type: "imageCarousel" })
+    .then((asset) => {
+      return asset.items;
+    });
 
-//   return entries;
-// };
+  return entries;
+};
 
 // const getAuthorPresentation = async () => {
 //   const entries = await currentClient.getEntries({
@@ -55,7 +55,7 @@ const getSeasonVideo = async () => {
 
 const getEntries = {
   // getBlogPosts,
-  // getCarouselImages,
+  getCarouselImages,
   // getAuthorPresentation,
   getSeasonVideo,
   getLogo,

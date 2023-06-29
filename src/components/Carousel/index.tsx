@@ -8,17 +8,17 @@ import CarouselImage from "./CarouselImage";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 type Props = {
-  images: ImageCarouselProps[];
+  carouselImages: ImageCarouselProps[];
   children?: React.ReactNode;
   activeArrow?: boolean;
   activeIndex?: boolean;
 };
 
-export default function Carousel_({ images }: Props) {
+export default function Carousel_({ carouselImages }: Props) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col items-center mb-8">
       <Carousel
         className="flex h-auto mt-8 mb-4"
         showThumbs={false}
@@ -48,15 +48,19 @@ export default function Carousel_({ images }: Props) {
           );
         }}
       >
-        {/* Refact this part to be more dynamic */}
-        {images.map((image) => (
+        {carouselImages.map((image) => (
           <CarouselImage image={image} key={image.sys.id} />
         ))}
       </Carousel>
-      <div className="flex items-center gap-14">
-        <CarouselIndex currentIndex={currentIndex} maxIndex={images.length} />
+      <div className="flex items-center w-[817px]">
+        <CarouselIndex
+          currentIndex={currentIndex}
+          maxIndex={carouselImages.length}
+        />
 
-        {/* <ImageDescription description={carouselData[currentIndex].desc} /> */}
+        <ImageDescription
+          description={carouselImages[currentIndex].fields.description}
+        />
       </div>
     </div>
   );

@@ -8,17 +8,19 @@ import { SeasonVideoProps } from "@/types/SeasonVideo";
 import { LogoProps } from "@/types/Logo";
 
 type Props = {
-  images: ImageCarouselProps[];
+  carouselImages: ImageCarouselProps[];
   authorPresentation: AuthorDescriptionProps[];
   seasonVideo: SeasonVideoProps[];
-  logo: any;
+  logo: LogoProps[];
 };
 
-export default function Home({ logo }: Props) {
+export default function Home({ logo, carouselImages }: Props) {
+  console.log(carouselImages);
   return (
     <HomeContainer>
-      <Header logo={logo} />
-      {/* <Footer /> */}
+      <Header logo={logo} carouselImages={carouselImages} />
+
+      <Footer />
     </HomeContainer>
   );
 }
@@ -29,5 +31,6 @@ export async function getStaticProps() {
   // const seasonVideo = await getEntries.getSeasonVideo();
 
   const logo = await getEntries.getLogo();
-  return { props: { logo } };
+  const carouselImages = await getEntries.getCarouselImages();
+  return { props: { logo, carouselImages } };
 }

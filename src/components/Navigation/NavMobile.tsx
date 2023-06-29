@@ -15,7 +15,7 @@ export default function NavMobile({ navbar, setNavbar }: Props) {
     navbar && (
       <nav
         ref={navRef}
-        className="absolute top-[91px] left-0 w-screen bg-black py-4"
+        className="absolute z-50 top-[91px] left-0 w-screen bg-black py-4"
       >
         <ul className="text-[#B5B3B3] uppercase">
           <li className="flex items-center justify-center py-4 hover:blur-[1px]">

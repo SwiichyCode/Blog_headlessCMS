@@ -4,14 +4,15 @@ import { ImageCarouselProps } from "@/types/ImageCarousel";
 import { LogoProps } from "@/types/Logo";
 
 type Props = {
-  logo: any;
+  logo: LogoProps[];
+  carouselImages: ImageCarouselProps[];
 };
 
-export default function Header({ logo }: Props) {
+export default function Header({ logo, carouselImages }: Props) {
   return (
     <header className="flex flex-col items-center justify-center w-full bg-[#1B1B1B]">
       <Navigation logo={logo} />
-      {/* <Carousel_ images={images} /> */}
+      <Carousel_ carouselImages={carouselImages} />
     </header>
   );
 }
