@@ -18,11 +18,11 @@ export default function NavMobile({ navbar, setNavbar }: Props) {
         className="absolute top-[91px] left-0 w-screen bg-black py-4"
       >
         <ul className="text-[#B5B3B3] uppercase">
-          <li className="flex items-center justify-center py-4">
+          <li className="flex items-center justify-center py-4 hover:blur-[1px]">
             <a href="#">Journal Extime</a>
           </li>
           <DropdownMobile />
-          <li className="flex items-center justify-center py-4">
+          <li className="flex items-center justify-center py-4 hover:blur-[1px]">
             <a href="#">Contact</a>
           </li>
         </ul>

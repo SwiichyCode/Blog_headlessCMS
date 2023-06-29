@@ -40,8 +40,8 @@ export default function DropdownMobile() {
           onClick={() => setOpenCollection(!openCollection)}
           className={
             openCollection
-              ? "flex gap-1 items-center text-white uppercase pb-4"
-              : "flex gap-1 items-center text-[#B5B3B3] uppercase"
+              ? "flex gap-1 items-center text-white uppercase pb-4 hover:blur-[1px]"
+              : "flex gap-1 items-center text-[#B5B3B3] uppercase hover:blur-[1px]"
           }
         >
           the collection
@@ -54,7 +54,7 @@ export default function DropdownMobile() {
           {dropdownItems.map(({ href, label }, index) => (
             <li
               key={index}
-              className="flex items-center text-sm justify-center py-2 bg-[#131313]"
+              className="flex items-center text-sm justify-center py-2 bg-[#131313] hover:blur-[1px]"
             >
               <a
                 className="text-[#B5B3B3] text-sm tracking-[1.6px] uppercase"
