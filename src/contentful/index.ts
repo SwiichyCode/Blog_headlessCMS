@@ -1,35 +1,48 @@
 import { createClient } from "contentful";
 
-const client = createClient({
-  space: process.env.CONTENTFUL_SPACE as string,
-  accessToken: process.env.CONTENTFUL_ACCESTOKEN as string,
+const developpement = createClient({
+  space: process.env.CONTENTFUL_SPACE_DEV as string,
+  accessToken: process.env.CONTENTFUL_ACCESTOKEN_DEV as string,
 });
 
-const getBlogPosts = async () => {
-  const entries = await client.getEntries({ content_type: "blogPost" });
-  return entries.items;
-};
+const production = createClient({
+  space: process.env.CONTENTFUL_SPACE_PROD as string,
+  accessToken: process.env.CONTENTFUL_ACCESTOKEN_PROD as string,
+});
 
-const getCarouselImages = async () => {
-  const entries = await client
-    .getEntries({ content_type: "imageCarousel" })
-    .then((asset) => {
-      return asset.items;
-    });
-
-  return entries;
-};
-
-const getAuthorPresentation = async () => {
-  const entries = await client.getEntries({
-    content_type: "authorPresentation",
+const getLogo = async () => {
+  const entries = await production.getEntries({
+    content_type: "logo",
   });
 
   return entries.items;
 };
 
+// const getBlogPosts = async () => {
+//   const entries = await currentClient.getEntries({ content_type: "blogPost" });
+//   return entries.items;
+// };
+
+// const getCarouselImages = async () => {
+//   const entries = await currentClient
+//     .getEntries({ content_type: "imageCarousel" })
+//     .then((asset) => {
+//       return asset.items;
+//     });
+
+//   return entries;
+// };
+
+// const getAuthorPresentation = async () => {
+//   const entries = await currentClient.getEntries({
+//     content_type: "authorPresentation",
+//   });
+
+//   return entries.items;
+// };
+
 const getSeasonVideo = async () => {
-  const entries = await client
+  const entries = await developpement
     .getEntries({
       content_type: "seasonPlayer",
     })
@@ -41,10 +54,11 @@ const getSeasonVideo = async () => {
 };
 
 const getEntries = {
-  getBlogPosts,
-  getCarouselImages,
-  getAuthorPresentation,
+  // getBlogPosts,
+  // getCarouselImages,
+  // getAuthorPresentation,
   getSeasonVideo,
+  getLogo,
 };
 
 export default getEntries;

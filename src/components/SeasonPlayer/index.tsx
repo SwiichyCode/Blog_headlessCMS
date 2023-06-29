@@ -45,6 +45,7 @@ export default function SeasonPlayer({ seasonVideo }: Props) {
     setSelectedVideos(selectedMonthData?.week as Week[]);
   }, [selectedSeason, selectedMonth, data]);
 
+  console.log(seasonVideo);
   console.log(selectedVideos);
 
   return (

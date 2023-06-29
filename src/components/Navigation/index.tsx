@@ -1,37 +1,30 @@
-import Link from "next/link";
+import { useState } from "react";
 import Logo from "@/components/Logo";
-import Dropdown from "@/components/Navigation/Dropdown";
+import Nav from "@/components/Navigation/Nav";
+import HamburgerIcon from "./HamburgerIcon";
+import { useWindowSize } from "@/hooks/useWindowSize";
+import NavMobile from "./NavMobile";
 
-const dropdownLinks = [
-  { href: "/", label: "all" },
-  { href: "/", label: "landscapes" },
-  { href: "/", label: "portraits" },
-  { href: "/", label: "street" },
-];
+type Props = {
+  logo: any;
+};
 
-export default function Navigation() {
+export default function Navigation({ logo }: Props) {
+  const [navbar, setNavbar] = useState(false);
+  const { width } = useWindowSize();
+  const urlLogo = logo[0].fields.image.fields.file.url;
+
   return (
-    <nav className="flex items-center w-full h-[156px] max-w-[1230px] border-b-[1px] border-[#B5B3B3] px-4">
-      <Logo />
-      <ul className="flex px-4 items-center">
-        <li className="px-4 hover:blur-[1px] ease-in-out">
-          <Link
-            className="text-[#B5B3B3] text-sm tracking-[1.6px] uppercase"
-            href="/"
-          >
-            JOURNAL ExTime
-          </Link>
-        </li>
-        <Dropdown dropdownLinks={dropdownLinks} />
-        <li className="px-4 hover:blur-[1px] ease-in-out">
-          <Link
-            className="text-[#B5B3B3] text-sm tracking-[1.6px] uppercase"
-            href="/"
-          >
-            Contact
-          </Link>
-        </li>
-      </ul>
+    <nav className="flex items-center justify-between w-full max-w-[1230px] border-b-[1px] border-[#B5B3B3] px-4 md:h-[156px]">
+      <div className="flex items-center h-full">
+        <Logo src={urlLogo} />
+        {width > 768 ? (
+          <Nav />
+        ) : (
+          <NavMobile navbar={navbar} setNavbar={setNavbar} />
+        )}
+      </div>
+      <HamburgerIcon navbar={navbar} setNavbar={setNavbar} />
     </nav>
   );
 }

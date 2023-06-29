@@ -19,7 +19,7 @@ export default function Dropdown({ dropdownLinks }: DropdownProps) {
       <div ref={buttonDropdownRef} className="flex gap-1 items-center">
         <button
           onClick={() => setOpenCollection(!openCollection)}
-          className="text-[#B5B3B3] text-sm tracking-[1.6px] uppercase h-[17px]"
+          className="text-[#B5B3B3] text-sm uppercase h-[17px]"
         >
           the collection
         </button>

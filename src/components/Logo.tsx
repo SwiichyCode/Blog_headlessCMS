@@ -1,9 +1,19 @@
 import Image from "next/image";
 
-export default function Logo() {
+type Props = {
+  src: string;
+};
+
+export default function Logo({ src }: Props) {
   return (
-    <div className="flex items-center justify-center border-r-[1px] border-[#B5B3B3] h-full pl-4 pr-6">
-      <Image src="/logo.png" alt="logo" width={95} height={95} />
+    <div className="relative z-40 flex items-center justify-center border-[#B5B3B3] h-full pl-4 pr-6 md:border-r-[1px]">
+      <Image
+        src={`https://` + src}
+        alt="logo"
+        width={95}
+        height={95}
+        className="m-auto w-[65px] py-3 md:w-[95px]"
+      />
     </div>
   );
 }
