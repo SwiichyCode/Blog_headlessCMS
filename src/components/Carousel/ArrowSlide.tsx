@@ -1,4 +1,10 @@
 import Image from "next/image";
+import styled from "styled-components";
+
+const ArrowStyle = styled.button`
+  background: black;
+  border-radius: 15px;
+`;
 
 type ArrowProps = {
   onClick?: () => void;
@@ -10,7 +16,7 @@ type ArrowProps = {
 export default function ArrowSlide(props: ArrowProps) {
   const { onClick, labelPrev, labelNext, position } = props;
   return (
-    <button
+    <ArrowStyle
       type="button"
       onClick={onClick}
       title={position == "left" ? labelPrev : labelNext}
@@ -23,9 +29,9 @@ export default function ArrowSlide(props: ArrowProps) {
       <Image
         src="/carousel/slide.svg"
         alt="arrow slide"
-        width={16}
+        width={4}
         height={24}
       />
-    </button>
+    </ArrowStyle>
   );
 }

@@ -10,6 +10,7 @@ const Container = styled.main`
   flex-direction: column;
   padding: 0 1rem;
   gap: 6rem;
+  background-color: white;
 `;
 
 export default function MainContainer({ children }: Props) {
