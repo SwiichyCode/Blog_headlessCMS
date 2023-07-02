@@ -11,5 +11,8 @@ export const DropdownButton = styled.button`
   font-size: 14px;
   line-height: 20px;
   text-transform: uppercase;
-  color: #b5b3b3;
+  color: white;
+  text-decoration: underline black 3px;
+  text-underline-offset: 4px;
+font-size: 14px;
 `;
