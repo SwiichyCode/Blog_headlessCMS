@@ -5,11 +5,13 @@ interface Props {
   children: React.ReactNode;
 }
 
-const Container = styled.div`
-  font-family: "Inter", sans-serif;
-  background-color: #1b1b1b;
+const Container = styled.main`
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+  gap: 6rem;
 `;
 
-export default function HomeContainer({ children }: Props) {
+export default function MainContainer({ children }: Props) {
   return <Container>{children}</Container>;
 }
