@@ -13,7 +13,7 @@ const rightItems = [
 
 export default function Footer() {
   return (
-    <footer className="w-full gap-6 bg-[#000000] font-light text-sm text-[#B5B3B3]">
+    <footer className="w-full gap-6 bg-[#879E82] font-light text-sm text-white border-t-2 border-white mt-2">
       <div className="flex justify-between max-w-[1230px] m-auto py-16 px-4">
         <div className="flex flex-col items-center gap-8">
           <ul className="flex uppercase gap-8">

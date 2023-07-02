@@ -6,6 +6,6 @@ export const HeaderWrapper = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  background-color: #1b1b1b;
-  margin-bottom: 26px;
+  background-color: #879e82 ;
+  margin-bottom: 7px;
 `;
