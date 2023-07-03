@@ -1,5 +1,5 @@
 import getEntries from "@/contentful";
-import HomeContainer from "@/components/Layouts/HomeContainer";
+import HomeLayout from "@/layouts/HomeLayout";
 import Header from "@/components/Header";
 import { ImageCarouselProps } from "@/types/ImageCarousel";
 import { AuthorDescriptionProps } from "@/types/AuthorDescription";
@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import { SeasonVideoProps } from "@/types/SeasonVideo";
 import { LogoProps } from "@/types/Logo";
 import Main from "@/components/Main";
-import MainContainer from "@/components/Layouts/MainContainer";
+import MainLayout from "@/layouts/MainLayout";
 import Carousel_ from "@/components/Carousel/Carousel";
 
 type Props = {
@@ -19,14 +19,14 @@ type Props = {
 
 export default function Home({ logo, carouselImages }: Props) {
   return (
-    <HomeContainer>
+    <HomeLayout>
       <Header logo={logo} carouselImages={carouselImages} />
-      <MainContainer>
+      <MainLayout>
         <Carousel_ carouselImages={carouselImages} />
         <Main />
-      </MainContainer>
+      </MainLayout>
       <Footer />
-    </HomeContainer>
+    </HomeLayout>
   );
 }
 

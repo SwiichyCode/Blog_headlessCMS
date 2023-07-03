@@ -12,6 +12,6 @@ const Container = styled.main`
   gap: 6rem;
 `;
 
-export default function MainContainer({ children }: Props) {
+export default function MainLayout({ children }: Props) {
   return <Container>{children}</Container>;
 }

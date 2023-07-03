@@ -1,4 +1,4 @@
-import PrototypeContainer from "@/components/Layouts/PrototypeContainer";
+import PrototypeContainer from "@/layouts/PrototypeLayout";
 import SeasonPlayer from "@/components/SeasonPlayer";
 import getEntries from "@/contentful";
 

@@ -4,7 +4,8 @@ import { LogoProps } from "@/types/Logo";
 import Logo from "@/components/Logo";
 import Navbar from "@/components/Navigation/Navbar";
 import HamburgerIcon from "@/components/Navigation/HamburgerIcon";
-import { NavigationContainer, NavigationWrapper } from "./styles";
+import ToggleSwitch from "@/components/ToggleSwitch";
+import * as S from "./styles";
 
 type Props = {
   logo: LogoProps[];
@@ -22,12 +23,13 @@ export default function Navigation({ logo }: Props) {
   }, [width]);
 
   return (
-    <NavigationContainer>
-      <NavigationWrapper>
+    <S.NavigationContainer>
+      <S.NavigationWrapper>
         <Logo src={urlLogo} />
         <Navbar navbarOpen={navbarOpen} />
-      </NavigationWrapper>
+        <ToggleSwitch />
+      </S.NavigationWrapper>
       <HamburgerIcon navbarOpen={navbarOpen} setNavbarOpen={setNavbarOpen} />
-    </NavigationContainer>
+    </S.NavigationContainer>
   );
 }

@@ -16,7 +16,7 @@ export const ArrowSlideBtn = styled.button<{ position: string }>`
   z-index: 10;
   transition: all 0.3s ease-in-out;
   border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
 
   img {
     width: 16px;
