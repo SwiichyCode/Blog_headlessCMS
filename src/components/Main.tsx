@@ -5,14 +5,12 @@ export default function Main() {
     <main className="flex flex-col items-center justify-center w-full mb-16">
       <section className="flex flex-col items-center w-full max-w-4xl text-[#ededed]">
         <div className="flex flex-col items-start">
-          <h1 className="text-6xl mb-10">I am Abbas.</h1>
-          <p className="text-5xl leading-relaxed">
-            I am a photographer, which means I write with light.
-          </p>
+          <h1 className="text-3xl mb-10">Je m'appelle Florence Illouz</h1>
+          <p className="text-3xl leading-relaxed">Je suis artiste visuelle.</p>
         </div>
         <div className=" w-[2px] h-[144px] bg-[#ededed] my-8"></div>
         <div className="flex flex-col items-center w-full max-w-[510px]">
-          <h2 className="text-xl mb-8">FONDS ABBAS PHOTOS</h2>
+          {/* <h2 className="text-xl mb-8">FONDS ABBAS PHOTOS</h2> */}
 
           <article className="relative flex flex-col items-center gap-6 w-full text-[#bbb6b6] text-lg">
             <div className="flex justify-between w-full">
@@ -21,23 +19,22 @@ export default function Main() {
             </div>
 
             <p className="max-w-[450px]">
-              Magnum photographer Abbas has roamed the world for 55 years in
-              search of images of upheaval, initially political and social, then
-              later, religious.
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Molestias odio qui possimus eum optio sed ipsum ut ea. A quis
+              obcaecati soluta vitae delectus id fugit, dicta quidem atque
+              totam.
             </p>
             <p className=" max-w-[450px]">
-              Describing himself as a “historian of the present”, Abbas covered
-              wars and revolutions in Biafra, Bangladesh, Northern Ireland,
-              Vietnam, Chile, Cuba, South Africa during Apartheid, and the
-              Middle East – most notably, the revolution in his own country,
-              Iran. He also documented life in Mexico – a project that defined
-              his aesthetic in photography – and pursued a lifelong interest in
-              religion and its intersection with society.
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas
+              maxime quis magni odio libero, incidunt deleniti nostrum id
+              laboriosam quidem repellendus nam debitis eos optio expedita,
+              eveniet nulla. Error, dolores.
             </p>
             <p className=" max-w-[450px]">
-              Fonds Abbas Photos has been created to protect, preserve and
-              promote Abbas’s life work, providing continued access to his rich
-              photographic oeuvre.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt,
+              voluptatibus. Amet at optio, vitae animi quas odio pariatur ex
+              consectetur blanditiis accusantium eaque ad harum veritatis
+              magnam, tempora doloremque quos!
             </p>
 
             <div className="flex justify-between w-full">

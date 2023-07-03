@@ -37,6 +37,10 @@ export const FooterNavList = styled.ul`
   display: flex;
   text-transform: uppercase;
 
+  &:nth-child(2) {
+    height: min-content;
+  }
+
   @media (max-width: 768px) {
     &:nth-child(2) {
       justify-content: center;
