@@ -15,7 +15,8 @@ export const NavigationContainer = styled.nav`
 `;
 
 export const NavigationWrapper = styled.div`
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
-  height: 100%;
 `;

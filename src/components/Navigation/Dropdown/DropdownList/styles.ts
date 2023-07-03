@@ -12,6 +12,7 @@ export const DropdownListContainer = styled.div<{
     width: 100%;
     position: initial;
     margin-top: 0;
+    pading: 24px 0;
   }
 `;
 

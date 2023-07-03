@@ -9,6 +9,7 @@ export const DropdownContainer = styled.li`
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 24px 0;
   }
 `;
 
@@ -16,12 +17,4 @@ export const ButtonWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 4px;
-`;
-
-export const DropdownButton = styled.button`
-  height: 17px;
-  font-size: 14px;
-  line-height: 20px;
-  text-transform: uppercase;
-  color: #b5b3b3;
 `;

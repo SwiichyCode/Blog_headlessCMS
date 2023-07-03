@@ -1,5 +1,4 @@
 import Dropdown from "@/components/Navigation/Dropdown";
-import { useWindowSize } from "@/hooks/useWindowSize";
 import * as S from "./styles";
 
 const dropdownLinks = [

@@ -1,3 +1,5 @@
+import * as S from "./styles";
+
 type CarouselIndexProps = {
   currentIndex: number;
   maxIndex: number;
@@ -8,16 +10,16 @@ export default function CarouselIndex(props: CarouselIndexProps) {
 
   function indexContainer(index: number) {
     return (
-      <span className="border-[1px] border-[#B5B3B3] text-[#B5B3B3] px-3 py-1">
+      <S.CarouselIndex className="border-[1px] border-[#B5B3B3] text-[#B5B3B3] px-3 py-1">
         {index}
-      </span>
+      </S.CarouselIndex>
     );
   }
 
   return (
-    <div className="flex gap-2">
+    <S.CarouselIndexWrapper>
       {indexContainer(currentIndex + 1)}
       {indexContainer(maxIndex)}
-    </div>
+    </S.CarouselIndexWrapper>
   );
 }

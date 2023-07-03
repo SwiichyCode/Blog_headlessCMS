@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { Carousel } from "react-responsive-carousel";
 import { ImageCarouselProps } from "@/types/ImageCarousel";
-import ArrowSlide from "./ArrowSlide";
-import CarouselIndex from "./CarouselIndex";
-import ImageDescription from "./ImageDescription";
-import CarouselImage from "./CarouselImage";
+import ArrowSlide from "../ArrowSlide";
+import CarouselIndex from "../CarouselIndex";
+import CarouselImageDescription from "../CarouselImageDescription";
+import CarouselImage from "../CarouselImage";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import * as S from "./styles";
 
 type Props = {
   carouselImages: ImageCarouselProps[];
@@ -18,9 +18,8 @@ export default function Carousel_({ carouselImages }: Props) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
-    <div className="flex flex-col items-center mb-8 px-4">
-      <Carousel
-        className="flex w-full max-w-[900px] h-auto mt-8 mb-4"
+    <S.CarouselWrapper>
+      <S.Carousel_
         showThumbs={false}
         showIndicators={false}
         showStatus={false}
@@ -50,17 +49,17 @@ export default function Carousel_({ carouselImages }: Props) {
         {carouselImages.map((image) => (
           <CarouselImage image={image} key={image.sys.id} />
         ))}
-      </Carousel>
-      <div className="flex items-center w-full max-w-[817px]">
+      </S.Carousel_>
+      <S.CarouselFooter>
         <CarouselIndex
           currentIndex={currentIndex}
           maxIndex={carouselImages.length}
         />
 
-        <ImageDescription
+        <CarouselImageDescription
           description={carouselImages[currentIndex].fields.description}
         />
-      </div>
-    </div>
+      </S.CarouselFooter>
+    </S.CarouselWrapper>
   );
 }

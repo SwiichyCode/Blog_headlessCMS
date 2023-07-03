@@ -19,7 +19,6 @@ export default function Dropdown({ dropdownLinks }: DropdownProps) {
 
   const handleClickOutside = () => {
     if (buttonDropdownRef.current?.contains(event?.target as Node)) return;
-
     setOpenCollection(false);
   };
 
