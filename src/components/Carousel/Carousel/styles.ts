@@ -8,7 +8,6 @@ export const CarouselWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   margin-bottom: 32px;
-  padding: 0 16px;
   margin: 0 auto;
   color: #b5b3b3;
 `;
