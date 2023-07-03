@@ -19,25 +19,35 @@ export default function Footer() {
         <S.FooterNav>
           <S.FooterNavList>
             {current.map(({ href, label }, index) => (
-              <S.FooterNavListItem key={index} className="hover:blur-[1px]">
-                <Link href={href} key={`${href}${label}`}>
+              <S.FooterNavListItem key={index}>
+                <Link
+                  className="hover:blur-[1px]"
+                  href={href}
+                  key={`${href}${label}`}
+                >
                   {label}
                 </Link>
+                {index < current.length - 1 && <S.Line />}
               </S.FooterNavListItem>
             ))}
           </S.FooterNavList>
 
           <S.Copyright>
-            Copyright © 2020 Fonds Abbas Photos. All Rights Reserved.
+            Copyright © 2020 Florence. All Rights Reserved.
           </S.Copyright>
         </S.FooterNav>
 
         <S.FooterNavList>
           {social.map(({ href, label }, index) => (
-            <S.FooterNavListItem key={index} className="hover:blur-[1px]">
-              <Link href={href} key={`${href}${label}`}>
+            <S.FooterNavListItem key={index}>
+              <Link
+                className="hover:blur-[1px]"
+                href={href}
+                key={`${href}${label}`}
+              >
                 {label}
               </Link>
+              {index < current.length - 2 && <S.Line />}
             </S.FooterNavListItem>
           ))}
         </S.FooterNavList>

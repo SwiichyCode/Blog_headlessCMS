@@ -35,7 +35,6 @@ export const FooterNav = styled.nav`
 
 export const FooterNavList = styled.ul`
   display: flex;
-  gap: 32px;
   text-transform: uppercase;
 
   @media (max-width: 768px) {
@@ -46,11 +45,12 @@ export const FooterNavList = styled.ul`
 `;
 
 export const FooterNavListItem = styled.li`
-  padding: 12px 16px;
-  transition: 0.3s ease-in-out;
+  display: flex;
+  padding: 12px 0;
 
   a {
     letter-spacing: 1.6px;
+    transition: 0.3s ease-in-out;
   }
 `;
 
@@ -58,4 +58,11 @@ export const Copyright = styled.p`
   @media (max-width: 768px) {
     font-size: 12px;
   }
+`;
+
+export const Line = styled.div`
+  width: 1px;
+  height: 100%;
+  background-color: #b5b3b3;
+  margin: 0 16px;
 `;
