@@ -6,7 +6,6 @@ export const NavigationContainer = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #b5b3b3;
   padding: 0 16px;
 
   @media (min-width: 768px) {

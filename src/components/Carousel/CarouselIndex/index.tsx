@@ -9,11 +9,7 @@ export default function CarouselIndex(props: CarouselIndexProps) {
   const { currentIndex, maxIndex } = props;
 
   function indexContainer(index: number) {
-    return (
-      <S.CarouselIndex className="border-[1px] border-[#B5B3B3] text-[#B5B3B3] px-3 py-1">
-        {index}
-      </S.CarouselIndex>
-    );
+    return <S.CarouselIndex>{index}</S.CarouselIndex>;
   }
 
   return (

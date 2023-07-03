@@ -6,7 +6,7 @@ import { AuthorDescriptionProps } from "@/types/AuthorDescription";
 import Footer from "@/components/Footer";
 import { SeasonVideoProps } from "@/types/SeasonVideo";
 import { LogoProps } from "@/types/Logo";
-import Main from "@/components/Main";
+import Presentation from "@/components/Presentation";
 import MainLayout from "@/layouts/MainLayout";
 import Carousel_ from "@/components/Carousel/Carousel";
 
@@ -23,7 +23,7 @@ export default function Home({ logo, carouselImages }: Props) {
       <Header logo={logo} carouselImages={carouselImages} />
       <MainLayout>
         <Carousel_ carouselImages={carouselImages} />
-        <Main />
+        <Presentation />
       </MainLayout>
       <Footer />
     </HomeLayout>
