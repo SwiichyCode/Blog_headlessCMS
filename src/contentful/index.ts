@@ -33,6 +33,16 @@ const getCarouselImages = async () => {
   return entries;
 };
 
+const getCarouselVideos = async () => {
+  const entries = await production
+    .getEntries({ content_type: "carouselVideo" })
+    .then((video) => {
+      return video.items;
+    });
+
+  return entries;
+};
+
 // const getAuthorPresentation = async () => {
 //   const entries = await currentClient.getEntries({
 //     content_type: "authorPresentation",
@@ -56,6 +66,7 @@ const getSeasonVideo = async () => {
 const getEntries = {
   // getBlogPosts,
   getCarouselImages,
+  getCarouselVideos,
   // getAuthorPresentation,
   getSeasonVideo,
   getLogo,
