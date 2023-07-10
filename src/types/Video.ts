@@ -1,5 +1,6 @@
-export interface CarouselVideo {
+export interface Video {
   fields: {
+    description: string;
     video: {
       fields: {
         file: {

@@ -1,22 +1,20 @@
 import React, { useState } from "react";
-import { CarouselVideo } from "@/types/CarouselVideo";
-import { ImageCarouselProps } from "@/types/ImageCarousel";
 import ArrowSlide from "../ArrowSlide";
 import CarouselIndex from "../CarouselIndex";
 import CarouselImageDescription from "../CarouselImageDescription";
 import CarouselVideos from "../CarouselVideo";
+import { Video } from "@/types/Video";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import * as S from "./styles";
 
 type Props = {
-  carouselImages: ImageCarouselProps[];
-  carouselVideos: CarouselVideo[];
+  videos: Video[];
   children?: React.ReactNode;
   activeArrow?: boolean;
   activeIndex?: boolean;
 };
 
-export default function Carousel_({ carouselImages, carouselVideos }: Props) {
+export default function Carousel_({ videos }: Props) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
@@ -46,18 +44,15 @@ export default function Carousel_({ carouselImages, carouselVideos }: Props) {
           );
         }}
       >
-        {carouselVideos.map((video, index) => (
+        {videos.map((video, index) => (
           <CarouselVideos video={video} key={video.sys.id} />
         ))}
       </S.Carousel_>
       <S.CarouselFooter>
-        <CarouselIndex
-          currentIndex={currentIndex}
-          maxIndex={carouselImages.length}
-        />
+        <CarouselIndex currentIndex={currentIndex} maxIndex={videos.length} />
 
         <CarouselImageDescription
-          description={carouselImages[currentIndex].fields.description}
+          description={videos[currentIndex].fields.description}
         />
       </S.CarouselFooter>
     </S.CarouselWrapper>

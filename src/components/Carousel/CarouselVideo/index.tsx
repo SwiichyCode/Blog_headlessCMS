@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { CarouselVideo } from "@/types/CarouselVideo";
+import { CarouselVideo } from "@/types/Video";
 import styled from "styled-components";
 
 const Video = styled.video`
