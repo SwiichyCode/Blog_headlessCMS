@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { CarouselVideo } from "@/types/CarouselVideo";
 import styled from "styled-components";
 
@@ -10,20 +10,31 @@ const Video = styled.video`
 
 type Props = {
   video: CarouselVideo;
-  setIsVideoEnded: (value: boolean) => void;
 };
 
-export default function CarouselVideo({ video, setIsVideoEnded }: Props) {
-  const handlePlay = () => {
-    setIsVideoEnded(false);
-  };
+export default function CarouselVideo({ video }: Props) {
+  const videoRef = useRef<HTMLVideoElement>(null);
 
-  const handleEnded = () => {
-    setIsVideoEnded(true);
-  };
+  useEffect(() => {
+    const handleVideoEnded = () => {
+      if (videoRef.current) {
+        videoRef.current.currentTime = 0;
+      }
+    };
+
+    if (videoRef.current) {
+      videoRef.current.addEventListener("ended", handleVideoEnded);
+    }
+
+    return () => {
+      if (videoRef.current) {
+        videoRef.current.removeEventListener("ended", handleVideoEnded);
+      }
+    };
+  }, []);
 
   return (
-    <Video controls onPlay={handlePlay} onEnded={handleEnded}>
+    <Video autoPlay muted controls ref={videoRef}>
       <source src={video.fields.video.fields.file.url} type="video/mp4" />
     </Video>
   );

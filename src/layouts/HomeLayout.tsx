@@ -7,7 +7,7 @@ interface Props {
 
 const Container = styled.div`
   font-family: "Inter", sans-serif;
-  background-color: ${({ theme }) => theme.theme.main};
+  background-color: ${({ theme }) => theme.theme.bgMain};
 `;
 
 export default function HomeLayout({ children }: Props) {

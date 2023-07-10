@@ -1,8 +1,11 @@
 export const darkTheme = {
-  header: "#000000",
-  main: "#ececed",
-  text: "#000000",
-  footer: "#000000",
+  bgHeader: "#202020",
+  borderHeader: "#b49379",
+  bgMain: "#202020",
+  bgFooter: "#000000",
+  textNavigation: "#4b4b4b",
+  textNavigationActive: "#FFFFFF",
+  textMain: "#b49379",
 };
 
 export const lightTheme = {

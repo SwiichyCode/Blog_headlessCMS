@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { LogoWrapper } from "./styles";
 
 type Props = {
   src: string;
@@ -6,7 +7,7 @@ type Props = {
 
 export default function Logo({ src }: Props) {
   return (
-    <div className="relative z-40 flex items-center justify-center border-[#B5B3B3] h-full pl-4 pr-6 md:border-r-[1px]">
+    <LogoWrapper>
       <Image
         src={`https://` + src}
         alt="logo"
@@ -14,6 +15,6 @@ export default function Logo({ src }: Props) {
         height={95}
         className="m-auto w-[65px] py-3 md:w-[95px]"
       />
-    </div>
+    </LogoWrapper>
   );
 }

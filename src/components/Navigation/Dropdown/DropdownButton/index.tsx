@@ -19,7 +19,7 @@ export default function DropdownButton({
         className="hover:blur-[1px]"
         onClick={() => setOpenCollection(!openCollection)}
       >
-        the collection
+        la collection
       </S.DropdownButton>
       <BiChevronDown className="text-[#B5B3B3] text-sm" />
     </S.ButtonWrapper>

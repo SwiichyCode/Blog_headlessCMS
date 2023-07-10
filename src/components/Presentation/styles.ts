@@ -15,7 +15,7 @@ export const PresentationWrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: ${({ theme }) => theme.theme.text};
+  color: ${({ theme }) => theme.theme.textMain};
 `;
 
 export const PresentationHeader = styled.div`
@@ -30,7 +30,7 @@ export const PresentationHeader = styled.div`
 export const Line = styled.div`
   width: 2px;
   height: 144px;
-  background-color: ${({ theme }) => theme.theme.text};
+  background-color: ${({ theme }) => theme.theme.textMain};
   margin: 32px 0;
 `;
 

@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 export const FooterContainer = styled.footer`
   width: 100%;
-  background-color: ${({ theme }) => theme.theme.footer};
+  background-color: ${({ theme }) => theme.theme.bgFooter};
   font-weight: 300;
   font-size: 14px;
-  color: #b5b3b3;
+  color: ${({ theme }) => theme.theme.textNavigation};
 `;
 
 export const FooterWrapper = styled.div`
@@ -67,6 +67,6 @@ export const Copyright = styled.p`
 export const Line = styled.div`
   width: 1px;
   height: 100%;
-  background-color: #b5b3b3;
+  background-color: ${({ theme }) => theme.theme.borderHeader};
   margin: 0 16px;
 `;

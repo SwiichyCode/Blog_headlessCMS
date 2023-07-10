@@ -29,9 +29,18 @@ export const NavItem = styled.li`
 `;
 
 export const NavLink = styled(Link)`
-  color: #b5b3b3;
+  color: ${({ theme }) => theme.theme.textNavigation};
+  font-weight: bold;
   font-size: 16px;
   line-height: 20px;
   letter-spacing: 1.6px;
   text-transform: uppercase;
+
+  &.active {
+    color: ${({ theme }) => theme.theme.textNavigationActive};
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-color: #b49379;
+    text-decoration-thickness: 3px;
+  }
 `;

@@ -9,7 +9,6 @@ export const CarouselWrapper = styled.div`
   align-items: center;
   margin-bottom: 32px;
   margin: 0 auto;
-  /* color: #b5b3b3; */
   color: ${({ theme }) => theme.theme.text};
 `;
 
@@ -25,5 +24,5 @@ export const CarouselFooter = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  color: ${({ theme }) => theme.theme.text};
+  color: ${({ theme }) => theme.theme.textMain};
 `;

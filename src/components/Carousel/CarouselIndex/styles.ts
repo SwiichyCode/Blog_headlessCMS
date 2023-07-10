@@ -6,6 +6,6 @@ export const CarouselIndexWrapper = styled.div`
 `;
 
 export const CarouselIndex = styled.span`
-  border: 1px solid #b5b3b3;
+  border: 1px solid ${({ theme }) => theme.theme.borderHeader};
   padding: 4px 12px;
 `;

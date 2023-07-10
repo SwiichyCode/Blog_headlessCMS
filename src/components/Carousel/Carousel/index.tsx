@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { CarouselVideo } from "@/types/CarouselVideo";
 import { ImageCarouselProps } from "@/types/ImageCarousel";
 import ArrowSlide from "../ArrowSlide";
@@ -17,15 +17,7 @@ type Props = {
 };
 
 export default function Carousel_({ carouselImages, carouselVideos }: Props) {
-  const [isVideoEnded, setIsVideoEnded] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    if (isVideoEnded) {
-      const nextIndex = (currentIndex + 1) % carouselVideos.length;
-      setCurrentIndex(nextIndex);
-    }
-  }, [isVideoEnded]);
 
   return (
     <S.CarouselWrapper>
@@ -54,12 +46,8 @@ export default function Carousel_({ carouselImages, carouselVideos }: Props) {
           );
         }}
       >
-        {carouselVideos.map((video) => (
-          <CarouselVideos
-            video={video}
-            key={video.sys.id}
-            setIsVideoEnded={setIsVideoEnded}
-          />
+        {carouselVideos.map((video, index) => (
+          <CarouselVideos video={video} key={video.sys.id} />
         ))}
       </S.Carousel_>
       <S.CarouselFooter>

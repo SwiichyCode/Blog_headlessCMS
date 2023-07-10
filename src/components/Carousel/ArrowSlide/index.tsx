@@ -10,6 +10,7 @@ type ArrowProps = {
 
 export default function ArrowSlide(props: ArrowProps) {
   const { onClick, labelPrev, labelNext, position = "" } = props;
+
   return (
     <S.ArrowSlideBtn
       position={position}
