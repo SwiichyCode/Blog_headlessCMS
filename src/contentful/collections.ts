@@ -39,7 +39,13 @@ export async function fetchCollections(): Promise<CollectionsProps[]> {
       content_type: "collections",
     });
 
-  return collectionsResult.items.map(
+  const sortedCollections = collectionsResult.items.sort((a, b) => {
+    const orderA = a.fields.order || 0;
+    const orderB = b.fields.order || 0;
+    return orderA - orderB;
+  });
+
+  return sortedCollections.map(
     (collectionsEntry) =>
       parseContentfulCollections(collectionsEntry) as CollectionsProps
   );

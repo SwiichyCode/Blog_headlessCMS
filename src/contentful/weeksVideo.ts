@@ -8,6 +8,7 @@ type VideoEntry = Entry<TypeVideoSkeleton, undefined, string>;
 export interface VideoProps {
   description: string;
   carouselVideo: ContentVideo | null;
+  src?: string;
 }
 
 function parseContentfulVideo(videoEntry?: VideoEntry): VideoProps | null {

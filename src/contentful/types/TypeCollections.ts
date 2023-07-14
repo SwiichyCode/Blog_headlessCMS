@@ -8,6 +8,7 @@ import type {
 
 export interface TypeCollectionsFields {
   title?: EntryFieldTypes.Text;
+  order?: EntryFieldTypes.Integer;
   url?: EntryFieldTypes.Symbol;
   video?: EntryFieldTypes.AssetLink;
   description?: EntryFieldTypes.Text;

@@ -4,9 +4,10 @@ import { Video } from "./styles";
 
 type Props = {
   video: VideoProps;
+  isCollections?: boolean;
 };
 
-export default function CarouselVideo({ video }: Props) {
+export default function CarouselVideo({ video, isCollections }: Props) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -29,7 +30,10 @@ export default function CarouselVideo({ video }: Props) {
 
   return (
     <Video autoPlay muted controls ref={videoRef}>
-      <source src={video?.carouselVideo?.src} type="video/mp4" />
+      <source
+        src={isCollections ? video?.src : video?.carouselVideo?.src}
+        type="video/mp4"
+      />
     </Video>
   );
 }

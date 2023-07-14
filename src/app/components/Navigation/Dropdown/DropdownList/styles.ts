@@ -6,7 +6,7 @@ export const DropdownListContainer = styled.div<{
 }>`
   position: absolute;
   margin-top: 20px;
-  width: ${(props) => props.buttonDropdownWidth}px;
+  /* width: ${(props) => props.buttonDropdownWidth}px; */
 
   @media (max-width: 768px) {
     width: 100%;

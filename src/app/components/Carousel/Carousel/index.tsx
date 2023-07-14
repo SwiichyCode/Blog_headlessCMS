@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import ArrowSlide from "../ArrowSlide";
 import CarouselIndex from "../CarouselIndex";
@@ -8,13 +10,14 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import * as S from "./styles";
 
 type Props = {
-  videos: VideoProps[];
+  data: any;
   children?: React.ReactNode;
   activeArrow?: boolean;
   activeIndex?: boolean;
+  isCollections?: boolean;
 };
 
-export default function Carousel_({ videos }: Props) {
+export default function Carousel_({ data, isCollections }: Props) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
@@ -44,15 +47,23 @@ export default function Carousel_({ videos }: Props) {
           );
         }}
       >
-        {videos.map((video: any, index: number) => (
-          <CarouselVideos video={video} key={index} />
+        {data.map((video: any, index: number) => (
+          <CarouselVideos
+            video={video}
+            key={index}
+            isCollections={isCollections}
+          />
         ))}
       </S.Carousel_>
       <S.CarouselFooter>
-        <CarouselIndex currentIndex={currentIndex} maxIndex={videos.length} />
+        <CarouselIndex currentIndex={currentIndex} maxIndex={data.length} />
 
         <CarouselImageDescription
-          description={videos[currentIndex].description}
+          description={
+            isCollections
+              ? data[currentIndex].title
+              : data[currentIndex].description
+          }
         />
       </S.CarouselFooter>
     </S.CarouselWrapper>

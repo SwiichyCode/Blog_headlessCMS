@@ -11,7 +11,7 @@ type Props = {
 export default function Main({ videos }: Props) {
   return (
     <MainLayout>
-      <Carousel_ videos={videos} />
+      <Carousel_ data={videos} />
       <Presentation />
     </MainLayout>
   );

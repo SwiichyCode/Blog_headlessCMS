@@ -1,10 +1,8 @@
-import React from "react";
-import * as S from "./styles";
 import { CollectionsProps } from "@/contentful/collections";
+import * as S from "./styles";
 
 type Props = {
   openCollection: boolean;
-  dropdownLinks: { href: string; label: string }[];
   dropdownRef: React.MutableRefObject<HTMLDivElement>;
   listDropdownRef: React.MutableRefObject<HTMLUListElement>;
   buttonDropdownWidth: number | undefined;
@@ -13,13 +11,11 @@ type Props = {
 
 export default function DropdownList({
   openCollection,
-  dropdownLinks,
   dropdownRef,
   listDropdownRef,
   buttonDropdownWidth,
   collections,
 }: Props) {
-  console.log(collections.map((collection) => collection.title));
   return (
     openCollection && (
       <S.DropdownListContainer
@@ -27,17 +23,24 @@ export default function DropdownList({
         buttonDropdownWidth={buttonDropdownWidth}
       >
         <S.DropdownList ref={listDropdownRef}>
-          {collections &&
-            collections.map(({ title, url }, index) => (
-              <S.DropdownListItem key={index} className="hover:blur-[1px]">
-                <S.DropdownListItemLink
-                  href={`/collections/${url as string}`}
-                  key={index}
-                >
-                  {title}
-                </S.DropdownListItemLink>
-              </S.DropdownListItem>
-            ))}
+          <S.DropdownListItem className="hover:blur-[1px]">
+            <S.DropdownListItemLink
+              href="/collections"
+              className="hover:blur-[1px]"
+            >
+              Collections
+            </S.DropdownListItemLink>
+          </S.DropdownListItem>
+          {collections.map(({ title, url }, index) => (
+            <S.DropdownListItem key={index} className="hover:blur-[1px]">
+              <S.DropdownListItemLink
+                href={`/collections/${url as string}`}
+                key={index}
+              >
+                {title}
+              </S.DropdownListItemLink>
+            </S.DropdownListItem>
+          ))}
         </S.DropdownList>
       </S.DropdownListContainer>
     )
