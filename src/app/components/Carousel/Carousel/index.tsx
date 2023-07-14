@@ -3,7 +3,7 @@ import ArrowSlide from "../ArrowSlide";
 import CarouselIndex from "../CarouselIndex";
 import CarouselImageDescription from "../CarouselImageDescription";
 import CarouselVideos from "../CarouselVideo";
-import { VideoProps } from "@/contentful/video";
+import { VideoProps } from "@/contentful/weeksVideo";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import * as S from "./styles";
 

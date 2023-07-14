@@ -1,5 +1,5 @@
 import { Entry } from "contentful";
-import { TypeVideoSkeleton } from "./types/TypeVideo";
+import { TypeVideoSkeleton } from "./types/TypeWeeksVideo";
 import { ContentVideo, parseContentfulContentVideo } from "./contentVideo";
 import { contentfulClient } from "./contentfulClient";
 

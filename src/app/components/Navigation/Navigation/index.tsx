@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useWindowSize } from "@/app/hooks/useWindowSize";
 import { LogoProps } from "@/contentful/logo";
+import { CollectionsProps } from "@/contentful/collections";
 import Logo from "@/app/components/Logo";
 import Navbar from "@/app/components/Navigation/Navbar";
 import HamburgerIcon from "@/app/components/Navigation/HamburgerIcon";
@@ -9,9 +10,10 @@ import * as S from "./styles";
 
 type Props = {
   logo: LogoProps | null;
+  collections: CollectionsProps[];
 };
 
-export default function Navigation({ logo }: Props) {
+export default function Navigation({ logo, collections }: Props) {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const { width } = useWindowSize();
 
@@ -25,7 +27,7 @@ export default function Navigation({ logo }: Props) {
     <S.NavigationContainer>
       <S.NavigationWrapper>
         <Logo src={logo?.image?.src || ""} />
-        <Navbar navbarOpen={navbarOpen} />
+        <Navbar navbarOpen={navbarOpen} collections={collections} />
         <ToggleSwitch />
       </S.NavigationWrapper>
       <HamburgerIcon navbarOpen={navbarOpen} setNavbarOpen={setNavbarOpen} />

@@ -1,10 +1,11 @@
 import { usePathname } from "next/navigation";
 import { PAGE_URL } from "@/app/constants/page_url";
+import { CollectionsProps } from "@/contentful/collections";
 import Dropdown from "@/app/components/Navigation/Dropdown";
 import * as S from "./styles";
 
 const dropdownLinks = [
-  { href: "/", label: "all" },
+  { href: "/collections", label: "collections" },
   { href: "/", label: "landscapes" },
   { href: "/", label: "portraits" },
   { href: "/", label: "street" },
@@ -12,9 +13,10 @@ const dropdownLinks = [
 
 type Props = {
   navbarOpen: boolean;
+  collections: CollectionsProps[];
 };
 
-export default function Navbar({ navbarOpen }: Props) {
+export default function Navbar({ navbarOpen, collections }: Props) {
   const pathname = usePathname();
 
   return (
@@ -27,7 +29,7 @@ export default function Navbar({ navbarOpen }: Props) {
           JOURNAL ExTime
         </S.NavLink>
       </S.NavItem>
-      <Dropdown dropdownLinks={dropdownLinks} />
+      <Dropdown dropdownLinks={dropdownLinks} collections={collections} />
       <S.NavItem className="hover:blur-[1px]">
         <S.NavLink
           href={PAGE_URL.CONTACT}

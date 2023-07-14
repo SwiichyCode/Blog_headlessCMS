@@ -1,4 +1,6 @@
+import React from "react";
 import * as S from "./styles";
+import { CollectionsProps } from "@/contentful/collections";
 
 type Props = {
   openCollection: boolean;
@@ -6,6 +8,7 @@ type Props = {
   dropdownRef: React.MutableRefObject<HTMLDivElement>;
   listDropdownRef: React.MutableRefObject<HTMLUListElement>;
   buttonDropdownWidth: number | undefined;
+  collections: CollectionsProps[];
 };
 
 export default function DropdownList({
@@ -14,24 +17,27 @@ export default function DropdownList({
   dropdownRef,
   listDropdownRef,
   buttonDropdownWidth,
+  collections,
 }: Props) {
+  console.log(collections.map((collection) => collection.title));
   return (
     openCollection && (
       <S.DropdownListContainer
         ref={dropdownRef}
         buttonDropdownWidth={buttonDropdownWidth}
       >
-        <S.DropdownList
-          ref={listDropdownRef}
-          className="flex flex-col gap-2 bg-black bg-opacity-75 mt-2 py-2 rounded"
-        >
-          {dropdownLinks.map(({ href, label }, index) => (
-            <S.DropdownListItem key={index} className="hover:blur-[1px]">
-              <S.DropdownListItemLink href={href} key={`${href}${label}`}>
-                {label}
-              </S.DropdownListItemLink>
-            </S.DropdownListItem>
-          ))}
+        <S.DropdownList ref={listDropdownRef}>
+          {collections &&
+            collections.map(({ title, url }, index) => (
+              <S.DropdownListItem key={index} className="hover:blur-[1px]">
+                <S.DropdownListItemLink
+                  href={`/collections/${url as string}`}
+                  key={index}
+                >
+                  {title}
+                </S.DropdownListItemLink>
+              </S.DropdownListItem>
+            ))}
         </S.DropdownList>
       </S.DropdownListContainer>
     )

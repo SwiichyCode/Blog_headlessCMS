@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { VideoProps } from "@/contentful/video";
+import { VideoProps } from "@/contentful/weeksVideo";
 import { Video } from "./styles";
 
 type Props = {

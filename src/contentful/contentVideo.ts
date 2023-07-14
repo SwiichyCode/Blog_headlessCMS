@@ -1,6 +1,8 @@
 import { Asset, AssetLink } from "contentful";
 
 export interface ContentVideo {
+  title?: string;
+  description?: string;
   src: string;
 }
 
@@ -16,6 +18,8 @@ export function parseContentfulContentVideo(
   }
 
   return {
+    title: asset.fields.title || "",
+    description: asset.fields.description || "",
     src: asset.fields.file?.url || "",
   };
 }

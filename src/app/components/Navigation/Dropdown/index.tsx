@@ -1,15 +1,20 @@
 import { useRef, useState } from "react";
 import { useClickOutside } from "@/app/hooks/useClickOutside";
 import { useWindowSize } from "@/app/hooks/useWindowSize";
+import { CollectionsProps } from "@/contentful/collections";
 import DropdownButton from "./DropdownButton";
 import DropdownList from "./DropdownList";
 import * as S from "./styles";
 
 type DropdownProps = {
   dropdownLinks: { href: string; label: string }[];
+  collections: CollectionsProps[];
 };
 
-export default function Dropdown({ dropdownLinks }: DropdownProps) {
+export default function Dropdown({
+  dropdownLinks,
+  collections,
+}: DropdownProps) {
   const [openCollection, setOpenCollection] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const buttonDropdownRef = useRef<HTMLDivElement>(null);
@@ -43,6 +48,7 @@ export default function Dropdown({ dropdownLinks }: DropdownProps) {
         }
         openCollection={openCollection}
         dropdownLinks={dropdownLinks}
+        collections={collections}
         buttonDropdownWidth={buttonDropdownWidth}
       />
     </S.DropdownContainer>
