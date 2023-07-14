@@ -3,6 +3,7 @@ export const darkTheme = {
   borderHeader: "#b49379",
   bgMain: "#202020",
   bgCarousel: "#050303",
+  borderCarousel: "red",
   bgFooter: "#000000",
   textNavigation: "#4b4b4b",
   textNavigationActive: "#FFFFFF",

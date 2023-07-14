@@ -26,7 +26,6 @@ export const FooterWrapper = styled.div`
 export const FooterNav = styled.nav`
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 3.2rem;
 
   @media (max-width: ${breakpoints.md}) {

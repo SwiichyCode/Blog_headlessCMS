@@ -18,6 +18,7 @@ export const Carousel_ = styled(Carousel)`
   height: auto;
   margin-top: 3.2rem;
   margin-bottom: 1.6rem;
+  border: 2px solid ${({ theme }) => theme.theme.borderCarousel};
 `;
 
 export const CarouselFooter = styled.div`
