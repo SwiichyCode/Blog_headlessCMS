@@ -6,12 +6,12 @@ export const PresentationContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 64px;
+  margin-bottom: 6.4rem;
 `;
 
 export const PresentationWrapper = styled.section`
   width: 100%;
-  max-width: 896px;
+  max-width: 89.6rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,27 +22,27 @@ export const PresentationHeader = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  font-size: 30px;
-  line-height: 36px;
-  gap: 40px;
+  font-size: 3rem;
+  line-height: 3.6rem;
+  gap: 4rem;
 `;
 
 export const Line = styled.div`
   width: 2px;
-  height: 144px;
+  height: 14.4rem;
   background-color: ${({ theme }) => theme.theme.textMain};
-  margin: 32px 0;
+  margin: 3.2rem 0;
 `;
 
 export const PresentationTextWrapper = styled.div`
   width: 100%;
-  max-width: 510px;
+  max-width: 51rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   p {
-    max-width: 450px;
+    max-width: 45rem;
   }
 `;
 
@@ -53,6 +53,8 @@ export const PresentationTextArticle = styled.article`
   flex-direction: column;
   align-items: center;
   gap: 24px;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
 `;
 
 export const MarkWrapper = styled.div`

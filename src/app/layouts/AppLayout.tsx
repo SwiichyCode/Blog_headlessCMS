@@ -8,7 +8,6 @@ type Props = {
 };
 
 const AppWrapper = styled.div`
-  font-family: "Inter", sans-serif;
   background-color: ${({ theme }) => theme.theme.bgMain};
 `;
 

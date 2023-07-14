@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { BiChevronDown } from "react-icons/bi";
 
 export const ButtonWrapper = styled.div`
   display: flex;
@@ -11,7 +12,11 @@ export const DropdownButton = styled.button`
   font-size: 16px;
   line-height: 20px;
   text-transform: uppercase;
-  /* color: #b5b3b3; */
-  color: #4b4b4b;
+  color: ${({ theme }) => theme.theme.textNavigation};
   font-weight: bold;
+`;
+
+export const DropdownIcon = styled(BiChevronDown)`
+  color: ${({ theme }) => theme.theme.textNavigation};
+  font-size: 14px;
 `;

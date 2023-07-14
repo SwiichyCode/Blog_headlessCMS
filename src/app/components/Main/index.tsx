@@ -2,7 +2,7 @@
 import MainLayout from "@/app/layouts/MainLayout";
 import Carousel_ from "@/app/components/Carousel/Carousel";
 import Presentation from "@/app/components/Presentation";
-import { VideoProps } from "@/contentful_/video";
+import { VideoProps } from "@/contentful/video";
 
 type Props = {
   videos: VideoProps[];

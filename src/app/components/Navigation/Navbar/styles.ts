@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styled from "styled-components";
+import { breakpoints } from "@/app/styles/breakpoints";
 
 export const NavbarContainer = styled.ul<{ navbarOpen: boolean }>`
   width: 100%;
@@ -9,7 +10,7 @@ export const NavbarContainer = styled.ul<{ navbarOpen: boolean }>`
   padding: 16px;
   gap: 24px;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${breakpoints.md}) {
     display: ${({ navbarOpen }) => (navbarOpen ? "flex" : "none")};
     width: 100%;
     flex-direction: column;

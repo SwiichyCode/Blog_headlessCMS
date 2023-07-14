@@ -3,11 +3,11 @@ import { Carousel } from "react-responsive-carousel";
 
 export const CarouselWrapper = styled.div`
   width: 100%;
-  max-width: 817px;
+  max-width: 81.7rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 32px;
+  margin-bottom: 3.2rem;
   margin: 0 auto;
   color: ${({ theme }) => theme.theme.text};
 `;
@@ -16,8 +16,8 @@ export const Carousel_ = styled(Carousel)`
   width: 100%;
   display: flex;
   height: auto;
-  margin-top: 32px;
-  margin-bottom: 16px;
+  margin-top: 3.2rem;
+  margin-bottom: 1.6rem;
 `;
 
 export const CarouselFooter = styled.div`

@@ -1,12 +1,6 @@
 import React, { useEffect, useRef } from "react";
-import styled from "styled-components";
-import { VideoProps } from "@/contentful_/video";
-
-const Video = styled.video`
-  width: 100%;
-  height: 460px;
-  background-color: #050303;
-`;
+import { VideoProps } from "@/contentful/video";
+import { Video } from "./styles";
 
 type Props = {
   video: VideoProps;

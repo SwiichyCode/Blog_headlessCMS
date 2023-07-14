@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { breakpoints } from "@/app/styles/breakpoints";
 
 export const LogoWrapper = styled.div`
   height: 100%;
@@ -10,7 +11,7 @@ export const LogoWrapper = styled.div`
   padding: 0 24px 0 16px;
   z-index: 40;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${breakpoints.md}) {
     border-right: none;
   }
 `;

@@ -2,6 +2,7 @@ export const darkTheme = {
   bgHeader: "#202020",
   borderHeader: "#b49379",
   bgMain: "#202020",
+  bgCarousel: "#050303",
   bgFooter: "#000000",
   textNavigation: "#4b4b4b",
   textNavigationActive: "#FFFFFF",

@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import { breakpoints } from "@/app/styles/breakpoints";
 
 export const FooterContainer = styled.footer`
   width: 100%;
   background-color: ${({ theme }) => theme.theme.bgFooter};
   font-weight: 300;
-  font-size: 14px;
+  font-size: 1.4rem;
   color: ${({ theme }) => theme.theme.textNavigation};
 `;
 
@@ -13,12 +14,12 @@ export const FooterWrapper = styled.div`
   justify-content: space-between;
   max-width: 1230px;
   margin: auto;
-  padding: 64px 16px;
+  padding: 6.4rem 1.6rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${breakpoints.md}) {
     flex-direction: column;
     gap: 16px;
-    padding: 32px 16px;
+    padding: 3.2rem 1.6rem;
   }
 `;
 
@@ -26,10 +27,10 @@ export const FooterNav = styled.nav`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 32px;
+  gap: 3.2rem;
 
-  @media (max-width: 768px) {
-    gap: 16px;
+  @media (max-width: ${breakpoints.md}) {
+    gap: 1.6rem;
   }
 `;
 
@@ -41,7 +42,7 @@ export const FooterNavList = styled.ul`
     height: min-content;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: ${breakpoints.md}) {
     &:nth-child(2) {
       justify-content: center;
     }
@@ -50,7 +51,7 @@ export const FooterNavList = styled.ul`
 
 export const FooterNavListItem = styled.li`
   display: flex;
-  padding: 12px 0;
+  padding: 1.2rem 0;
 
   a {
     letter-spacing: 1.6px;
@@ -59,8 +60,8 @@ export const FooterNavListItem = styled.li`
 `;
 
 export const Copyright = styled.p`
-  @media (max-width: 768px) {
-    font-size: 12px;
+  @media (max-width: ${breakpoints.md}) {
+    font-size: 1.2rem;
   }
 `;
 

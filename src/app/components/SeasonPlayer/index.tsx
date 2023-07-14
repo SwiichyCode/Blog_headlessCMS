@@ -9,7 +9,7 @@ import MonthNav from "./components/MonthNav";
 import SeasonNav from "./components/SeasonNav";
 import WeekCarousel from "./components/WeekCarousel";
 import useToggleNav from "./hooks/useToggleNav";
-import { SeasonVideoProps } from "@/types/SeasonVideo";
+import { SeasonVideoProps } from "@/app/types/SeasonVideo";
 
 type Props = {
   seasonVideo: SeasonVideoProps[];

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useWindowSize } from "@/app/hooks/useWindowSize";
-import { LogoProps } from "@/contentful_/logo";
+import { LogoProps } from "@/contentful/logo";
 import Logo from "@/app/components/Logo";
 import Navbar from "@/app/components/Navigation/Navbar";
 import HamburgerIcon from "@/app/components/Navigation/HamburgerIcon";

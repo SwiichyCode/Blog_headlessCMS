@@ -1,12 +1,26 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
-
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+    
     * {
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
     }
 
-    :root {}
+    html {
+        font-size: 62.5%;
+    }
 
+    body  {
+        font-family: "Inter", sans-serif;
+    }
+
+    :root {
+        --breakpoint-sm: 576px;
+        --breakpoint-md: 768px;
+        --breakpoint-lg: 992px;
+        --breakpoint-xl: 1200px;
+    }
 `;

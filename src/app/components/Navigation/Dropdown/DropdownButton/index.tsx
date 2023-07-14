@@ -1,5 +1,4 @@
 import React from "react";
-import { BiChevronDown } from "react-icons/bi";
 import * as S from "./styles";
 
 type Props = {
@@ -21,7 +20,7 @@ export default function DropdownButton({
       >
         la collection
       </S.DropdownButton>
-      <BiChevronDown className="text-[#B5B3B3] text-sm" />
+      <S.DropdownIcon />
     </S.ButtonWrapper>
   );
 }
