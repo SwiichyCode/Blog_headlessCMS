@@ -6,7 +6,7 @@ export default function Presentation() {
     <S.PresentationContainer>
       <S.PresentationWrapper>
         <S.PresentationHeader>
-          <h1>Je m'appelle Florence Illouz, je suis artiste visuelle.</h1>
+          <h1>Je m&apos;appelle Florence Illouz, je suis artiste visuelle.</h1>
         </S.PresentationHeader>
         {/* <S.Line /> */}
         <S.PresentationTextWrapper>

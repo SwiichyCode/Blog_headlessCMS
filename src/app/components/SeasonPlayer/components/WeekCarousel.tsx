@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Carousel } from "react-responsive-carousel";
-import ArrowSlide from "@/components/Carousel/ArrowSlide";
+import ArrowSlide from "@/app/components/Carousel/ArrowSlide";
 import VideoGrid from "./VideoGrid";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { getCurrentWeek } from "../utils/getCurrentWeek";
@@ -41,8 +41,8 @@ export default function WeekCarousel({ week }: Props) {
       }}
     >
       {week &&
-        week.map((week: any) => (
-          <div className="h-[384px]">
+        week.map((week: any, index: any) => (
+          <div className="h-[384px]" key={index}>
             <VideoGrid videos={videos} />
           </div>
         ))}
