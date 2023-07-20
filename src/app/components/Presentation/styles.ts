@@ -16,6 +16,7 @@ export const PresentationWrapper = styled.section`
   flex-direction: column;
   align-items: center;
   color: ${({ theme }) => theme.theme.textMain};
+  gap: 12rem;
 `;
 
 export const PresentationHeader = styled.div`
@@ -28,21 +29,21 @@ export const PresentationHeader = styled.div`
 `;
 
 export const Line = styled.div`
-  width: 2px;
-  height: 14.4rem;
+  width: 14.4rem;
+  height: 2px;
   background-color: ${({ theme }) => theme.theme.textMain};
   margin: 3.2rem 0;
 `;
 
 export const PresentationTextWrapper = styled.div`
   width: 100%;
-  max-width: 51rem;
+  max-width: 61rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   p {
-    max-width: 45rem;
+    max-width: 55rem;
   }
 `;
 

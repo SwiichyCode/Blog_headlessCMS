@@ -7,8 +7,8 @@ export const CarouselWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 3.2rem;
   margin: 0 auto;
+  gap: 2.4rem;
   color: ${({ theme }) => theme.theme.text};
 `;
 
@@ -16,9 +16,8 @@ export const Carousel_ = styled(Carousel)`
   width: 100%;
   display: flex;
   height: auto;
-  margin-top: 3.2rem;
-  margin-bottom: 1.6rem;
   border: 2px solid ${({ theme }) => theme.theme.borderCarousel};
+  border-radius: 8px;
 `;
 
 export const CarouselFooter = styled.div`

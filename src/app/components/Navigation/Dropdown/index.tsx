@@ -7,14 +7,10 @@ import DropdownList from "./DropdownList";
 import * as S from "./styles";
 
 type DropdownProps = {
-  dropdownLinks: { href: string; label: string }[];
   collections: CollectionsProps[];
 };
 
-export default function Dropdown({
-  dropdownLinks,
-  collections,
-}: DropdownProps) {
+export default function Dropdown({ collections }: DropdownProps) {
   const [openCollection, setOpenCollection] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const buttonDropdownRef = useRef<HTMLDivElement>(null);
@@ -47,7 +43,6 @@ export default function Dropdown({
           listDropdownRef as React.MutableRefObject<HTMLUListElement>
         }
         openCollection={openCollection}
-        dropdownLinks={dropdownLinks}
         collections={collections}
         buttonDropdownWidth={buttonDropdownWidth}
       />

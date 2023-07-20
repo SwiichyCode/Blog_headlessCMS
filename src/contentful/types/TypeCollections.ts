@@ -10,6 +10,7 @@ export interface TypeCollectionsFields {
   title?: EntryFieldTypes.Text;
   order?: EntryFieldTypes.Integer;
   url?: EntryFieldTypes.Symbol;
+  miniature?: EntryFieldTypes.AssetLink;
   video?: EntryFieldTypes.AssetLink;
   description?: EntryFieldTypes.Text;
   videos?: EntryFieldTypes.Array<EntryFieldTypes.AssetLink>;

@@ -7,6 +7,7 @@ export const FooterContainer = styled.footer`
   font-weight: 300;
   font-size: 1.4rem;
   color: ${({ theme }) => theme.theme.textNavigation};
+  border-top: 1px solid ${({ theme }) => theme.theme.borderHeader};
 `;
 
 export const FooterWrapper = styled.div`
@@ -29,6 +30,7 @@ export const FooterNav = styled.nav`
   gap: 3.2rem;
 
   @media (max-width: ${breakpoints.md}) {
+    align-items: center;
     gap: 1.6rem;
   }
 `;
@@ -51,6 +53,7 @@ export const FooterNavList = styled.ul`
 export const FooterNavListItem = styled.li`
   display: flex;
   padding: 1.2rem 0;
+  font-weight: bold;
 
   a {
     letter-spacing: 1.6px;

@@ -6,10 +6,9 @@ export default function Presentation() {
     <S.PresentationContainer>
       <S.PresentationWrapper>
         <S.PresentationHeader>
-          <h1>Je m'appelle Florence Illouz</h1>
-          <p>Je suis artiste visuelle.</p>
+          <h1>Je m'appelle Florence Illouz, je suis artiste visuelle.</h1>
         </S.PresentationHeader>
-        <S.Line />
+        {/* <S.Line /> */}
         <S.PresentationTextWrapper>
           <S.PresentationTextArticle className="text-lg">
             <S.MarkWrapper>

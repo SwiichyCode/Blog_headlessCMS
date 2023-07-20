@@ -1,16 +1,11 @@
 import { fetchCollections } from "@/contentful/collections";
-import Carousel_ from "../components/Carousel/Carousel";
+import MainCollection from "../components/MainCollection";
 
 export default async function Collections() {
   const collections = await fetchCollections();
   const collectionsVideo = collections.map((collection) => collection.video);
 
-  console.log(collectionsVideo);
+  console.log(collections);
 
-  return (
-    <div>
-      {/* <h1>Collections</h1> */}
-      <Carousel_ data={collectionsVideo} isCollections={true} />
-    </div>
-  );
+  return <MainCollection collections={collections} />;
 }

@@ -8,8 +8,9 @@ interface Props {
 const Container = styled.main`
   display: flex;
   flex-direction: column;
-  padding: 0 1rem;
-  gap: 6rem;
+  margin: 12rem 0;
+  padding: 0 6rem;
+  gap: 24rem;
 `;
 
 export default function MainLayout({ children }: Props) {

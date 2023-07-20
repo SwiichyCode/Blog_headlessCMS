@@ -1,13 +1,13 @@
 export const darkTheme = {
   bgHeader: "#202020",
-  borderHeader: "#b49379",
-  bgMain: "#202020",
+  borderHeader: "#FFFFFF",
+  bgMain: "#050303",
   bgCarousel: "#050303",
-  borderCarousel: "red",
-  bgFooter: "#000000",
+  borderCarousel: "#FFFFFF",
+  bgFooter: "#202020",
   textNavigation: "#4b4b4b",
   textNavigationActive: "#FFFFFF",
-  textMain: "#b49379",
+  textMain: "#FFFFFF",
 };
 
 export const lightTheme = {
