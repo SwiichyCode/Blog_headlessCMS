@@ -15,3 +15,14 @@ export const LogoWrapper = styled.div`
     border-right: none;
   }
 `;
+
+export const Image = styled.img`
+  width: 9.5rem;
+  height: 9.5rem;
+  max-width: initial;
+
+  @media (max-width: 768px) {
+    width: 6.5rem;
+    height: 6.5rem;
+  }
+`;
