@@ -36,3 +36,10 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+--TODOLIST
+-Implémentation d'un webhooks du côté de vercel et de contentful pour raffraichir les data ajoutés depuis contentul (Check)
+-Fix la récupération du logo depuis contentul (En cours)
+-Création de grid layout qui gère l'affichage des collections et des items de la collection
+-Ajout d'une modal pour afficher les vidéos de la collection dans un video player
+-Création de la page de contact avec formulaire pour envoyer des email au client (Trouver une lib qui me permettra de faire ceci sans backend)
