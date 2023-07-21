@@ -1,45 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## CarouselVideo
 
-## Getting Started
+Le content model "CarouselVideo" est utilisé par le carousel sur la page d'accueil et affiche 7 vidéos de la semaine.
 
-First, run the development server:
+### Champs :
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- **Vidéo** : la vidéo en question.
+- **Description** : une brève description de la vidéo.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Logo
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Le content model "Logo" contient un champ et sert à changer le logo du site web.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### Champ :
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- **Image** : le logo du site web.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Collections
 
-## Learn More
+Le content model "Collections" permet d'ajouter une nouvelle collection (page) à notre application. Il contient plusieurs champs pour fournir toutes les informations nécessaires pour afficher et organiser chaque collection.
 
-To learn more about Next.js, take a look at the following resources:
+### Champs :
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
---TODOLIST
--Implémentation d'un webhooks du côté de vercel et de contentful pour raffraichir les data ajoutés depuis contentul (Check)
--Fix la récupération du logo depuis contentul (En cours)
--Création de grid layout qui gère l'affichage des collections et des items de la collection
--Ajout d'une modal pour afficher les vidéos de la collection dans un video player
--Création de la page de contact avec formulaire pour envoyer des email au client (Trouver une lib qui me permettra de faire ceci sans backend)
+- **Titre** : le titre de la collection.
+- **Ordre** : l'ordre dans lequel la collection sera placée.
+- **URL** : l'URL de la page de la collection.
+- **Miniature** : la miniature de la collection utilisée sur la page des collections.
+- **Description** : une brève description de la collection.
+- **Vidéos** : les vidéos incluses dans la collection.
