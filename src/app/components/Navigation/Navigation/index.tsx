@@ -28,7 +28,7 @@ export default function Navigation({ logo, collections }: Props) {
       <S.NavigationWrapper>
         <Logo src={logo?.image?.src || ""} />
         <Navbar navbarOpen={navbarOpen} collections={collections} />
-        <ToggleSwitch />
+        {/* <ToggleSwitch /> */}
       </S.NavigationWrapper>
       <HamburgerIcon navbarOpen={navbarOpen} setNavbarOpen={setNavbarOpen} />
     </S.NavigationContainer>
