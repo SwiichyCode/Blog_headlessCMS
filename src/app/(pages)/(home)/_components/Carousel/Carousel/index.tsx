@@ -13,10 +13,9 @@ type Props = {
   children?: React.ReactNode;
   activeArrow?: boolean;
   activeIndex?: boolean;
-  isCollections?: boolean;
 };
 
-export default function Carousel_({ data, isCollections }: Props) {
+export default function Carousel_({ data }: Props) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
@@ -47,22 +46,14 @@ export default function Carousel_({ data, isCollections }: Props) {
         }}
       >
         {data.map((video: any, index: number) => (
-          <CarouselVideos
-            video={video}
-            key={index}
-            isCollections={isCollections}
-          />
+          <CarouselVideos video={video} key={index} />
         ))}
       </S.Carousel_>
       <S.CarouselFooter>
         <CarouselIndex currentIndex={currentIndex} maxIndex={data.length} />
 
         <CarouselImageDescription
-          description={
-            isCollections
-              ? data[currentIndex].title
-              : data[currentIndex].description
-          }
+          description={data[currentIndex].description}
         />
       </S.CarouselFooter>
     </S.CarouselWrapper>

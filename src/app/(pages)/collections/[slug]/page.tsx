@@ -1,8 +1,10 @@
 import { Metadata, ResolvingMetadata } from "next";
-// import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 import { fetchCollections } from "@/contentful/content/collections";
 import { fetchCollection } from "@/contentful/content/collections";
+import GridLayout from "../_layouts/GridLayout";
+import CollectionLayout from "../_layouts/CollectionLayout";
+import CollectionVideo from "../_components/CollectionVideo";
 
 interface CollectionPageParams {
   slug: string;
@@ -41,9 +43,13 @@ async function BlogPostPage({ params }: CollectionPageProps) {
   }
 
   return (
-    <div>
-      <h1>{collection.title}</h1>
-    </div>
+    <CollectionLayout title={collection.title || ""}>
+      <GridLayout>
+        {collection.videos?.map((video: any, index) => (
+          <CollectionVideo video={video} />
+        ))}
+      </GridLayout>
+    </CollectionLayout>
   );
 }
 

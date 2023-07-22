@@ -1,13 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import { VideoProps } from "@/contentful/content/carouselVideo";
-import { Video } from "./styles";
+import VideoPlayer from "@/app/components/VideoPlayer";
 
 type Props = {
   video: VideoProps;
-  isCollections?: boolean;
 };
 
-export default function CarouselVideo({ video, isCollections }: Props) {
+export default function CarouselVideo({ video }: Props) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -29,11 +28,12 @@ export default function CarouselVideo({ video, isCollections }: Props) {
   }, []);
 
   return (
-    <Video autoPlay muted controls ref={videoRef}>
-      <source
-        src={isCollections ? video?.src : video?.carouselVideo?.src}
-        type="video/mp4"
-      />
-    </Video>
+    <VideoPlayer
+      src={video?.carouselVideo?.src || ""}
+      ref={videoRef}
+      controls
+      muted
+      autoPlay
+    />
   );
 }

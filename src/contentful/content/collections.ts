@@ -14,6 +14,10 @@ export interface CollectionsProps {
   video?: ContentVideo | null;
   description?: string;
   videos?: (ContentVideo | null)[];
+  videoRef?: {
+    miniature?: ContentImage | null;
+    video?: ContentVideo | null;
+  }[];
 }
 
 function parseContentfulCollections(

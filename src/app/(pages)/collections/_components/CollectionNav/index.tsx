@@ -10,7 +10,7 @@ type Props = {
 export default function CollectionsNav({ collections }: Props) {
   return (
     <S.CollectionsNavWrapper>
-      <h1>Les collections</h1>
+      {/* <h1>Les collections</h1> */}
       <GridLayout>
         {collections.map((collection: any, index: number) => (
           <Link href={`/collections/${collection.url}`} key={index}>
