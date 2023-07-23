@@ -30,41 +30,37 @@ const Video = styled.video.withConfig({
   cursor: pointer;
 `;
 
-const VideoPlayer = forwardRef<HTMLVideoElement, Props>(
-  (
-    {
-      src,
-      onMouseEnter,
-      onMouseLeave,
-      onClick,
-      controls,
-      muted,
-      autoPlay,
-      width,
-      height,
-      cover,
-    },
-    ref
-  ) => {
-    return (
-      <Video
-        ref={ref}
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
-        onClick={onClick}
-        controls={controls}
-        muted={muted}
-        autoPlay={autoPlay}
-        width={width}
-        height={height}
-        cover={cover}
-      >
-        <source src={src} type="video/mp4" />
-      </Video>
-    );
-  }
-);
-
-Video.displayName = "VideoPlayer";
+const VideoPlayer = forwardRef<HTMLVideoElement, Props>(function VideoPlayer(
+  {
+    src,
+    onMouseEnter,
+    onMouseLeave,
+    onClick,
+    controls,
+    muted,
+    autoPlay,
+    width,
+    height,
+    cover,
+  },
+  ref
+) {
+  return (
+    <Video
+      ref={ref}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      onClick={onClick}
+      controls={controls}
+      muted={muted}
+      autoPlay={autoPlay}
+      width={width}
+      height={height}
+      cover={cover}
+    >
+      <source src={src} type="video/mp4" />
+    </Video>
+  );
+});
 
 export default VideoPlayer;
