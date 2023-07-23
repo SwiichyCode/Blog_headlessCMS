@@ -65,4 +65,6 @@ const VideoPlayer = forwardRef<HTMLVideoElement, Props>(
   }
 );
 
+Video.displayName = "VideoPlayer";
+
 export default VideoPlayer;

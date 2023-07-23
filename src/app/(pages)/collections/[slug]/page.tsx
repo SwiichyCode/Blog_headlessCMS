@@ -46,7 +46,7 @@ async function BlogPostPage({ params }: CollectionPageProps) {
     <CollectionLayout title={collection.title || ""}>
       <GridLayout>
         {collection.videos?.map((video: any, index) => (
-          <CollectionVideo video={video} />
+          <CollectionVideo video={video} key={index}/>
         ))}
       </GridLayout>
     </CollectionLayout>
