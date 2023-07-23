@@ -8,7 +8,8 @@ type Props = {
 };
 
 const AppWrapper = styled.div`
-  background-color: ${({ theme }) => theme.theme.bgMain};
+  /* background-color: ${({ theme }) => theme.theme.bgMain}; */
+  background-color: #0b0a0a;
 `;
 
 export default function AppLayout({ children }: Props) {

@@ -13,8 +13,8 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     body  {
-        /* font-family: 'Inter', sans-serif; */
-        font-family: 'Lexend', sans-serif;
+        font-family: 'Manrope', sans-serif;
+        color: #F4F4F4;
         font-size: 1.4em;
     }
 

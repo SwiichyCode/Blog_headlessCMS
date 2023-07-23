@@ -19,9 +19,9 @@ export default async function RootLayout({
       <body>
         <StyledComponentsRegistry>
           <AppLayout>
-            <Header logo={logo} collections={collections} />
+            {/* <Header logo={logo} collections={collections} /> */}
             {children}
-            <Footer />
+            {/* <Footer /> */}
           </AppLayout>
         </StyledComponentsRegistry>
       </body>
