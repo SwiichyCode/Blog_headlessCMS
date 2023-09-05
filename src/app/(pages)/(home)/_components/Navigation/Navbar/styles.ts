@@ -11,16 +11,19 @@ export const NavbarContainer = styled.ul<{ navbarOpen: boolean }>`
   gap: 24px;
 
   @media (max-width: ${breakpoints.md}) {
-    display: ${({ navbarOpen }) => (navbarOpen ? "flex" : "none")};
+    display: flex;
+    opacity: ${({ navbarOpen }) => (navbarOpen ? "1" : "0")};
     width: 100%;
     flex-direction: column;
     position: absolute;
-    top: 91px;
+    top: ${({ navbarOpen }) => (navbarOpen ? "97px" : "-100%")};
+    transition: all 0.5s ease-in-out;
     left: 0;
     z-index: 50;
     background-color: black;
     padding: 16px 0;
-    gap: 0;
+    gap: 24px;
+    z-index: 99;
   }
 `;
 
@@ -36,6 +39,11 @@ export const NavLink = styled(Link)`
   line-height: 20px;
   letter-spacing: 1.6px;
   text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    color: #fff;
+  }
 
   &.active {
     color: ${({ theme }) => theme.theme.textNavigationActive};

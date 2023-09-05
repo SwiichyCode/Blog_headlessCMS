@@ -2,6 +2,13 @@
 import Link from "next/link";
 import * as S from "./styles";
 import GridLayout from "../../_layouts/GridLayout";
+import styled from "styled-components";
+
+const CollectionTitle = styled.h1`
+  font-size: 5rem;
+  letter-spacing: 0.1rem;
+  margin-bottom: 6rem;
+`;
 
 type Props = {
   collections: any;
@@ -10,7 +17,7 @@ type Props = {
 export default function CollectionsNav({ collections }: Props) {
   return (
     <S.CollectionsNavWrapper>
-      {/* <h1>Les collections</h1> */}
+      <CollectionTitle>Les collections</CollectionTitle>
       <GridLayout>
         {collections.map((collection: any, index: number) => (
           <Link href={`/collections/${collection.url}`} key={index}>

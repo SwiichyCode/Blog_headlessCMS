@@ -1,4 +1,5 @@
 import { RefObject, forwardRef } from "react";
+import { usePathname } from "next/navigation";
 import styled from "styled-components";
 
 interface Props extends React.VideoHTMLAttributes<HTMLVideoElement> {
@@ -19,11 +20,14 @@ type VideoProps = {
   width?: string;
   height?: string;
   cover?: boolean;
+  pathname?: string;
 };
 
 const Video = styled.video.withConfig({
-  shouldForwardProp: (prop) => !["width", "height", "cover"].includes(prop),
+  shouldForwardProp: (prop) =>
+    !["width", "height", "cover", "pathname"].includes(prop),
 })<VideoProps>`
+  max-width: ${(props) => (props.pathname === "/" ? "100%" : "413px")};
   width: ${(props) => props.width || "100%"};
   height: ${(props) => props.height || "460px"};
   object-fit: ${(props) => (props.cover ? "cover" : "contain")};
@@ -45,6 +49,7 @@ const VideoPlayer = forwardRef<HTMLVideoElement, Props>(function VideoPlayer(
   },
   ref
 ) {
+  const pathname = usePathname();
   return (
     <Video
       ref={ref}
@@ -57,6 +62,7 @@ const VideoPlayer = forwardRef<HTMLVideoElement, Props>(function VideoPlayer(
       width={width}
       height={height}
       cover={cover}
+      pathname={pathname}
     >
       <source src={src} type="video/mp4" />
     </Video>

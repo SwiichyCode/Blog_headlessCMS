@@ -7,12 +7,21 @@ import * as S from "./styles";
 
 type Props = {
   navbarOpen: boolean;
+  setNavbarOpen: (value: boolean) => void;
   collections: CollectionsProps[];
 };
 
-export default function Navbar({ navbarOpen, collections }: Props) {
+export default function Navbar({
+  navbarOpen,
+  setNavbarOpen,
+  collections,
+}: Props) {
   const [dropdownActive, setDropdownActive] = useState(false);
   const pathname = usePathname();
+
+  const handleCloseNavbar = () => {
+    setNavbarOpen(false);
+  };
 
   return (
     <S.NavbarContainer navbarOpen={navbarOpen}>
@@ -20,6 +29,7 @@ export default function Navbar({ navbarOpen, collections }: Props) {
         <S.NavLink
           href={PAGE_URL.HOME}
           className={pathname === PAGE_URL.HOME ? "active" : undefined}
+          onClick={handleCloseNavbar}
         >
           JOURNAL ExTime
         </S.NavLink>
@@ -31,6 +41,7 @@ export default function Navbar({ navbarOpen, collections }: Props) {
           <S.NavLink
             href={PAGE_URL.COLLECTIONS}
             className={pathname === PAGE_URL.COLLECTIONS ? "active" : undefined}
+            onClick={handleCloseNavbar}
           >
             Collections
           </S.NavLink>
@@ -41,6 +52,7 @@ export default function Navbar({ navbarOpen, collections }: Props) {
         <S.NavLink
           href={PAGE_URL.CONTACT}
           className={pathname === PAGE_URL.CONTACT ? "active" : undefined}
+          onClick={handleCloseNavbar}
         >
           Contact
         </S.NavLink>

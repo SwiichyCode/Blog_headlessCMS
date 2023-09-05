@@ -15,6 +15,7 @@ export const PresentationWrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   color: ${({ theme }) => theme.theme.textMain};
   gap: 12rem;
 `;

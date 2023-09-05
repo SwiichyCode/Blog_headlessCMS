@@ -6,10 +6,11 @@ export const NavigationContainer = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 16px;
+  padding: 16px;
 
   @media (min-width: 768px) {
     height: 156px;
+    padding: 0 32px;
   }
 `;
 

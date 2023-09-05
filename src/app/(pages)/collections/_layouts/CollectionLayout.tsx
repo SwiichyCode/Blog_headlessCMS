@@ -1,4 +1,5 @@
 "use client";
+import { usePathname } from "next/navigation";
 import styled from "styled-components";
 
 type Props = {
@@ -8,25 +9,29 @@ type Props = {
 
 const CollectionLayoutWrapper = styled.div`
   width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
   margin: 12rem 0;
   padding: 0 6rem;
   gap: 6rem;
+
+  @media (max-width: 768px) {
+    margin: 6rem 0;
+  }
 `;
 
-const CollectionTitle = styled.h1`
-  font-size: 5rem;
-  letter-spacing: 0.1rem;
-  margin-bottom: 6rem;
+const CollectionLayoutTitle = styled.h1`
+  text-align: center;
+  font-size: 3.6rem;
+  font-weight: 700;
 `;
 
 export default function CollectionLayout({ title, children }: Props) {
+  const pathname = usePathname();
   return (
     <CollectionLayoutWrapper>
-      <CollectionTitle>{title}</CollectionTitle>
+      {pathname === "/collections" ? null : (
+        <CollectionLayoutTitle>{title}</CollectionLayoutTitle>
+      )}
+
       {children}
     </CollectionLayoutWrapper>
   );

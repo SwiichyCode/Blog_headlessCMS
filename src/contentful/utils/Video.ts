@@ -4,6 +4,7 @@ export interface ContentVideo {
   title?: string;
   description?: string;
   src: string;
+  createdAt?: string;
 }
 
 export function parseContentfulContentVideo(
@@ -21,5 +22,6 @@ export function parseContentfulContentVideo(
     title: asset.fields.title || "",
     description: asset.fields.description || "",
     src: asset.fields.file?.url || "",
+    createdAt: asset.sys.createdAt || "",
   };
 }

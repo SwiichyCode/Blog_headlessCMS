@@ -5,6 +5,7 @@ import { fetchCollection } from "@/contentful/content/collections";
 import GridLayout from "../_layouts/GridLayout";
 import CollectionLayout from "../_layouts/CollectionLayout";
 import CollectionVideo from "../_components/CollectionVideo";
+import ColumnLayout from "../_layouts/ColumnLayout";
 
 interface CollectionPageParams {
   slug: string;
@@ -44,11 +45,11 @@ async function BlogPostPage({ params }: CollectionPageProps) {
 
   return (
     <CollectionLayout title={collection.title || ""}>
-      <GridLayout>
+      <ColumnLayout>
         {collection.videos?.map((video: any, index) => (
-          <CollectionVideo video={video} key={index}/>
+          <CollectionVideo video={video} key={index} />
         ))}
-      </GridLayout>
+      </ColumnLayout>
     </CollectionLayout>
   );
 }

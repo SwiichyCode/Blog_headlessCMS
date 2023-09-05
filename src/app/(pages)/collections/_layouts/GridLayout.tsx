@@ -10,8 +10,10 @@ const GridLayoutWrapper = styled.div`
   width: 100%;
   max-width: 130rem;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(40rem, 1fr));
-  grid-gap: 3rem;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-column-gap: 3rem;
+  grid-row-gap: 3rem;
+  margin: 0 auto;
 `;
 
 export default function GridLayout({ children }: Props) {
